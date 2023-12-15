@@ -19,6 +19,6 @@ const config = {
 	docs: {
 		autodocs: 'tag',
 	},
-	staticDirs: ['../src/eclipse', '../src/public', '../src/core', '../public'],
+	staticDirs: ['../public'],
 };
 export default config;
