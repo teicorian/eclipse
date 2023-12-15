@@ -2,6 +2,9 @@
   "name": "eclipse",
   "version": "0.1.0",
   "private": true,
+  "storybook": "start-storybook -p 6006 -s public",
+  "build-storybook": "build-storybook -s public",
+  "serve-storybook": "serve storybook-static",
   "dependencies": {
     "babel-preset-react-app": "^10.0.1",
     "cra-template": "1.2.0",
@@ -9,7 +12,7 @@
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.19.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,8 +40,5 @@
   },
   "devDependencies": {
     "storybook": "^7.6.5"
-  },
-  "storybook": "start-storybook -p 6006 -s public",
-  "build-storybook": "build-storybook -s public",
-  "serve-storybook": "serve storybook-static"
+  }
 }
