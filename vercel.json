@@ -1,6 +1,6 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"buildCommand": "yarn storybook build",
+	"buildCommand": "yarn build-storybook",
 	"devCommand": "yarn storybook",
 	"installCommand": "yarn",
 	"framework": null,
