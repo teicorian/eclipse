@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        { 
+            "source": "/api/:match*",
+            "destination": "${env:REACT_APP_API_URL}/:match*"
+        }
+    ]
+}
