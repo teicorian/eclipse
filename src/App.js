@@ -1,17 +1,12 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { logger } from 'utilities';
-import { UserProvider } from 'core/contexts/user.context';
-import Core from 'core';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Storybook from './storybook'; // Import your Storybook components
 
 function App() {
-	logger.debug('Entering App...');
 	return (
-		<BrowserRouter>
-			<UserProvider>
-				<Core />
-			</UserProvider>
-		</BrowserRouter>
+		<Router>
+			<Route path='/' component={Storybook} />
+		</Router>
 	);
 }
 
