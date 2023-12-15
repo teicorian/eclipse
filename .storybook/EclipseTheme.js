@@ -6,6 +6,6 @@ export default create({
 	base: 'light',
 	brandTitle: 'Eclipse UI',
 	brandUrl: baseUrl,
-	brandImage: 'http://localhost:3000/logo.svg',
+	brandImage: 'http://echo-ui.com/logo.svg',
 	brandTarget: '_self',
 });
