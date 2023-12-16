@@ -5,7 +5,7 @@ import './Button.css';
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ primary, size, label, ...props }) => {
+const Button = ({ primary, size, label, onClick, ...props }) => {
 	const mode = primary
 		? 'eclipse-button--primary'
 		: 'eclipse-button--secondary';
@@ -15,6 +15,7 @@ const Button = ({ primary, size, label, ...props }) => {
 			className={['eclipse-button', `eclipse-button--${size}`, mode].join(
 				' '
 			)}
+			onClick={onClick}
 			{...props}
 		>
 			{label}
