@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.8",
+	"version": "1.0.11",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -27,7 +27,7 @@
 		"storybook-serve": "storybook && npx serve storybook-static",
 		"storybook": "storybook dev -p 6006",
 		"clean": "rimraf dist",
-		"publish": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+		"publish": "npm run clean && cross-env NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
 	},
 	"eslintConfig": {
 		"extends": [

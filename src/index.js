@@ -34,4 +34,4 @@ export { default as Spacer } from './layout/Spacer/Spacer';
 // ################### Utilities #################################### //
 // ################################################################## //
 
-export { default as logger } from './utilities/logger';
+export { default as logger } from './utilities/Logger';
