@@ -4,21 +4,24 @@
 	align-items: center;
 	padding: 0 1rem;
 	height: 4rem;
+	width: 100%;
 	background-color: #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-left {
 	display: flex;
-	align-items: center;
-}
-
-.header-right {
-	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 
 .header-center {
 	display: flex;
 	align-items: center;
+}
+
+.header-right {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
 }

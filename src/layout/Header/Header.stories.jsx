@@ -7,12 +7,15 @@ export default {
 	parameters: {
 		layout: 'centered',
 	},
+	control: {
+		type: 'object',
+		render: {
+			// Custom renderer to display JSX input without quotes
+			options: (props) => React.createElement('div', {}, props),
+		},
+	},
 	tags: [],
 };
 
 export const Primary = (args) => <Header {...args} />;
-Primary.args = {
-	left: Header.Left,
-	right: Header.Right,
-	center: Header.Center,
-};
+Primary.args = {};

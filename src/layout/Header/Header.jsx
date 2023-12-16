@@ -3,42 +3,43 @@ import PropTypes from 'prop-types';
 import { Button } from '../../general/Button/Button';
 import './Header.css';
 
-const Header = ({ left, right, center }) => {
+const Header = ({ left, center, right }) => {
 	const Container = [];
 	if (left) {
-		Container.push(<Header.Left key='left' />);
-	}
-	if (right) {
-		Container.push(<Header.Right key='right' />);
+		Container.push(<Header.Left content={left} key='left' />);
 	}
 	if (center) {
-		Container.push(<Header.Center key='center' />);
+		Container.push(<Header.Center content={center} key='center' />);
 	}
+	if (right) {
+		Container.push(<Header.Right content={right} key='right' />);
+	}
+
 	return <div className={'header'}>{Container}</div>;
 };
 
-Header.Left = () => {
-	return <div className={'header-left'}>Left</div>;
+Header.Left = ({ content }) => {
+	return <div className={'header-left'}>{content}</div>;
 };
 
-Header.Right = () => {
-	return <div className={'header-right'}>Right</div>;
+Header.Center = ({ content }) => {
+	return <div className={'header-center'}>{content}</div>;
 };
 
-Header.Center = () => {
-	return <div className={'header-center'}>Center</div>;
+Header.Right = ({ content }) => {
+	return <div className={'header-right'}>{content}</div>;
 };
 
 export default Header;
 
 Header.propTypes = {
-	left: PropTypes.elementType,
-	right: PropTypes.elementType,
-	center: PropTypes.elementType,
+	left: PropTypes.string,
+	center: PropTypes.string,
+	right: PropTypes.string,
 };
 
 Header.defaultProps = {
-	left: Header.Left,
-	right: Header.Right,
-	center: Header.Center,
+	left: 'Left',
+	center: 'Center',
+	right: 'Right',
 };
