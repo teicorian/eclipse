@@ -4,7 +4,6 @@
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
-	"private": false,
 	"main": "dist/index.js",
 	"files": [
 		"dist",
@@ -16,15 +15,16 @@
 		"cra-template": "1.2.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.19.0"
+		"react-router-dom": "^6.19.0",
+		"storybook": "^7.6.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"build-storybook": "storybook build",
-		"serve-storybook": "yarn storybook && npx serve storybook-static",
+		"storybook-build": "storybook build",
+		"storybook-serve": "storybook && npx serve storybook-static",
 		"storybook": "storybook dev -p 6006",
 		"clean": "rimraf dist",
 		"publish": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
@@ -64,6 +64,12 @@
 		"@babel/core": "^7.23.6",
 		"@babel/preset-env": "^7.23.6",
 		"@babel/preset-react": "^7.23.3",
-		"react-scripts": "^5.0.1"
-	}
+		"@storybook/addon-docs": "^7.6.5",
+		"@storybook/addon-essentials": "^7.6.5",
+		"@storybook/addon-links": "^7.6.5",
+		"@storybook/react-webpack5": "^7.6.5",
+		"react-scripts": "^5.0.1",
+		"storybook": "^7.6.5"
+	},
+	"packageManager": "yarn@4.0.2"
 }
