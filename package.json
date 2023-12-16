@@ -70,6 +70,5 @@
 		"@storybook/react-webpack5": "^7.6.5",
 		"react-scripts": "^5.0.1",
 		"storybook": "^7.6.5"
-	},
-	"packageManager": "yarn@4.0.2"
+	}
 }
