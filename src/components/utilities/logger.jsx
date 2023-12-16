@@ -1,14 +1,14 @@
 const LogLevel = {
-    DEBUG: 'debug',
-    INFO: 'info',
-    WARN: 'warn',
-    ERROR: 'error',
+	DEBUG: 'debug',
+	INFO: 'info',
+	WARN: 'warn',
+	ERROR: 'error',
 };
 
 const logger = (level, ...messages) => {
-    if (process.env.NODE_ENV === 'development') {
-        console.log(`[${level.toUpperCase()}]`, ...messages);
-    }
+	if (process.env.NODE_ENV === 'development') {
+		console.log(`[${level.toUpperCase()}]`, ...messages);
+	}
 };
 
 logger.debug = (...messages) => logger(LogLevel.DEBUG, ...messages);

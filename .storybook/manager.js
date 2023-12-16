@@ -1,6 +1,9 @@
 import { addons } from '@storybook/manager-api';
-import EclipseTheme from './EclipseTheme';
 
 addons.setConfig({
-	theme: EclipseTheme,
+	base: 'light',
+	brandTitle: 'Eclipse UI',
+	brandUrl: baseUrl,
+	brandImage: 'https://eclipse-ui.com/logo.svg',
+	brandTarget: '_self',
 });

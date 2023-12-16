@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles';
+import '../../src/styles';
 
 const Card = ({ children, ...props }) => {
 	return (

@@ -1,24 +1,33 @@
 {
-	"name": "eclipse",
-	"version": "0.1.0",
-	"private": true,
+	"name": "@teicor/eclipse",
+	"version": "1.0.8",
+	"license": "MIT",
+	"description": "Modern and minimalist React UI library.",
+	"author": "TJ Bredemeyer <tj@teicor.com>",
+	"main": "dist/index.js",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
 	"dependencies": {
 		"babel-preset-react-app": "^10.0.1",
 		"cra-template": "1.2.0",
 		"react": "^18.2.0",
-		"react-bootstrap": "^2.9.1",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.19.0",
-		"react-scripts": "5.0.1"
+		"storybook": "^7.6.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"build-storybook": "storybook build",
-		"serve-storybook": "yarn build-storybook && npx serve storybook-static",
-		"storybook": "storybook dev -p 6006"
+		"storybook-build": "storybook build",
+		"storybook-serve": "storybook && npx serve storybook-static",
+		"storybook": "storybook dev -p 6006",
+		"clean": "rimraf dist",
+		"publish": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -27,31 +36,39 @@
 			"plugin:storybook/recommended"
 		]
 	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
+	"bugs": {
+		"url": "https://github.com/teicorian/eclipse/issues/new/choose"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/teicorian/eclipse"
+	},
+	"homepage": "https://eclipse-ui.com",
+	"keywords": [
+		"teicor",
+		"eclipse",
+		"eclipse ui",
+		"components",
+		"react components",
+		"react ui"
+	],
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
 		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"plugins": []
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.23.6",
+		"@babel/preset-env": "^7.23.6",
+		"@babel/preset-react": "^7.23.3",
+		"@storybook/addon-docs": "^7.6.5",
 		"@storybook/addon-essentials": "^7.6.5",
-		"@storybook/addon-interactions": "^7.6.5",
 		"@storybook/addon-links": "^7.6.5",
-		"@storybook/addon-onboarding": "^1.0.10",
-		"@storybook/blocks": "^7.6.5",
-		"@storybook/preset-create-react-app": "^7.6.5",
-		"@storybook/react": "^7.6.5",
 		"@storybook/react-webpack5": "^7.6.5",
-		"@storybook/test": "^7.6.5",
-		"eslint-plugin-storybook": "^0.6.15",
-		"prop-types": "^15.8.1",
-		"storybook": "^7.6.5",
-		"webpack": "^5.89.0"
+		"react-scripts": "^5.0.1",
+		"storybook": "^7.6.5"
 	}
 }
