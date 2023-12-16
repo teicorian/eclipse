@@ -15,7 +15,11 @@ const Header = ({ left, center, right }) => {
 		Container.push(<Header.Right content={right} key='right' />);
 	}
 
-	return <div className={'header'}>{Container}</div>;
+	return (
+		<div className={'container'}>
+			<div className={'header'}>{Container}</div>
+		</div>
+	);
 };
 
 Header.Left = ({ content }) => {
