@@ -17,7 +17,7 @@ const Header = ({ left, center, right }) => {
 
 	return (
 		<div className={'container'}>
-			<div className={'header'}>{Container}</div>
+			<div className={'wrapper'}>{Container}</div>
 		</div>
 	);
 };
@@ -37,13 +37,17 @@ Header.Right = ({ content }) => {
 export default Header;
 
 Header.propTypes = {
-	left: PropTypes.string,
+	left: PropTypes.element,
 	center: PropTypes.string,
 	right: PropTypes.string,
 };
 
 Header.defaultProps = {
-	left: 'Left',
+	left: (
+		<>
+			<div>Hello</div> <div>Hello</div>
+		</>
+	),
 	center: 'Center',
 	right: 'Right',
 };
