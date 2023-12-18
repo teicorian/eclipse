@@ -5,7 +5,7 @@ export default {
 	title: 'Layout/Header',
 	component: Header,
 	parameters: {
-		layout: 'centered',
+		layout: 'fullscreen',
 	},
 	control: {
 		type: 'object',
