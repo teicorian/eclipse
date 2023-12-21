@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '../../general/Button/Button';
-import { Logo } from '../../brand/Logo/Logo';
+import Button from '../../general/Button/Button';
+import Logo from '../../brand/Logo/Logo';
+import NavLink from '../../navigation/NavLink/NavLink';
 import './Header.css';
 
-const Header = ({ wrap, main }) => {
+const Header = ({ wrap, main, ...props }) => {
 	const Container = [];
 	if (wrap) {
-		Container.push(<Header.Wrap content={wrap} key='left' />);
+		Container.push(<Header.Wrap content={wrap} key='wrap' />);
 	}
 	if (main) {
-		Container.push(<Header.Main content={main} key='right' />);
+		Container.push(<Header.Main content={main} key='main' />);
 	}
 
 	return (
-		<div className={'navigation'}>
+		<div className={'navigation'} {...props}>
 			<div className={'container'}>{Container}</div>
 		</div>
 	);
@@ -39,8 +40,16 @@ Header.defaultProps = {
 	wrap: (
 		<>
 			<Logo />
-			<div>Hello</div> <div>Hello</div>
+			<NavLink to='/' label='Home' currentPath='/' />
+			<NavLink to='/services' label='Services' />
+			<NavLink to='/about' label='About' />
+			<NavLink to='/contact' label='Contact' />
 		</>
 	),
-	main: <div>Main</div>,
+	main: (
+		<>
+			<Button label='Log In' size='small' />
+			<Button label='Sign Up' size='small' />
+		</>
+	),
 };

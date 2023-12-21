@@ -11,4 +11,4 @@ export default {
 };
 
 export const Primary = (args) => <Logo {...args} />;
-Primary.args = { src: '/logo.svg' };
+Primary.args = { src: '/logo.svg', w: '2.5rem', h: '2.5rem' };

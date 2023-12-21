@@ -1,0 +1,63 @@
+@import '../../styles/base.css';
+
+.navlink {
+	color: var(--color-secondary);
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	transition: transform 2s ease-out;
+	margin-bottom: -1rem;
+	margin-top: -1rem;
+}
+
+.navlink .container {
+	padding: 0 0;
+	height: 4rem;
+	padding: 0.3rem 0.5rem;
+	border-bottom: 1px solid #000000;
+}
+
+.navlink .container .wrap:hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: transform 2s ease-in;
+}
+
+.navlink.sb-hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+.navlink.active {
+	color: var(--color);
+}
+
+.navlink.active:hover {
+	color: var(--color);
+	background: none;
+	cursor: default;
+}
+
+.navlink:hover::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #4caf50; /* Set your desired background color */
+	z-index: -1;
+	border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+	width: 0;
+	transition: width 0.3s ease-out;
+}
+
+.navlink:hover::after {
+	width: 100%; /* Set the width to 100% on hover */
+}

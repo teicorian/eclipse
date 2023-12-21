@@ -5,26 +5,32 @@ import './Logo.css';
 /**
  * Primary UI component for user interaction
  */
-const Logo = ({ src, size, ...props }) => {
-	if (src) {
-		return (
-			<div className={'logo'}>
-				<img src={src} {...props} />
-			</div>
-		);
-	} else {
-		return (
-			<div className={'logo'}>
-				<img src={'/logo.svg'} {...props} />
-			</div>
-		);
+const Logo = ({ src, w, h, ...props }) => {
+	const source = src ? src : '/logo.svg';
+	const style = {};
+
+	if (w) {
+		style.width = w;
 	}
+
+	if (h) {
+		style.height = h;
+	}
+	return (
+		<a href='/'>
+			<div className={'logo'} style={style}>
+				<img src={source} {...props} />
+			</div>
+		</a>
+	);
 };
 
 export default Logo;
 
 Logo.propTypes = {
 	src: PropTypes.string,
+	w: PropTypes.string,
+	h: PropTypes.string,
 };
 
 Logo.defaultProps = {
