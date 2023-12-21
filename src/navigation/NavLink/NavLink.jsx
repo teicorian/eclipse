@@ -8,17 +8,12 @@ const NavLink = ({ to, label, currentPath, ...props }) => {
 	const isActive = currentPath === to;
 
 	return (
-		<div className={'navlink'}>
-			<div className={'container'}>
-				<a ahref={to}>
-					<div
-						className={`wrap ${isActive ? 'active' : ''}`}
-						{...props}
-					>
-						{label}
-					</div>
-				</a>
-			</div>
+		<div className={`navlink ${isActive ? 'active' : ''}`}>
+			<a ahref={to}>
+				<div className={`navlink-wrap`} {...props}>
+					{label}
+				</div>
+			</a>
 		</div>
 	);
 };
