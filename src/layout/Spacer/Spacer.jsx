@@ -6,11 +6,7 @@ function Spacer({ w, h, ...props }) {
 		height: h ? `${h}rem` : undefined,
 	};
 
-	return (
-		<div style={styles} {...props}>
-			Spacer
-		</div>
-	);
+	return <div style={styles} {...props} />;
 }
 
 export default Spacer;
