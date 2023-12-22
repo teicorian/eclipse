@@ -35,4 +35,6 @@ jobs:
                   yarn version --prerelease --preid=nightly
 
             - name: Publish to npm (nightly)
-              run: yar
+              run: yarn publish --tag nightly
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
