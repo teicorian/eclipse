@@ -1,0 +1,35 @@
+@import '../../styles/base.css';
+
+.navlink {
+	color: var(--color-secondary);
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 4rem;
+}
+
+.navlink.active {
+	color: var(--color);
+	border-bottom: 2px solid #000000;
+	margin-bottom: -2px;
+}
+
+.navlink-wrap {
+	padding: 0.3rem 0.5rem;
+}
+
+.navlink-wrap:hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+.navlink.sb-hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}

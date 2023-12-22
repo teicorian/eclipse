@@ -21,13 +21,13 @@ Secondary.args = {
 	label: 'Button',
 };
 
-export const Large = (args) => <Button {...args} />;
+export const Large = (args) => <Button size='Large' {...args} />;
 Large.args = {
 	size: 'large',
 	label: 'Button',
 };
 
-export const Small = (args) => <Button {...args} />;
+export const Small = (args) => <Button size='Small' {...args} />;
 Small.args = {
 	size: 'small',
 	label: 'Button',
