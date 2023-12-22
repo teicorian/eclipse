@@ -1,4 +1,4 @@
-name: Publish Nightly to npm
+name: Publish to npm
 
 on:
     pull_request:
