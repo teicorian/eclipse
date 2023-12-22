@@ -22,6 +22,13 @@ jobs:
                   node-version: '20'
                   registry-url: 'https://registry.npmjs.org'
 
+            - name: Set up Git
+              run: |
+                  git config --global user.email "${{ secrets.GH_EMAIL }}"
+                  git config --global user.name "${{ secrets.GH_USER }}"
+                  git config --global credential.helper "store --file=.git-credentials"
+                  echo "https://${{ secrets.GH_TOKEN }}@github.com" > .git-credentials
+
             - name: Install dependencies
               run: yarn
 
@@ -30,8 +37,6 @@ jobs:
 
             - name: Version bump (prerelease)
               run: |
-                  git config --global user.email "${{ secrets.GH_EMAIL }}"
-                  git config --global user.name "${{ secrets.GH_USER }}"
                   git push --follow-tags
                   yarn version --prerelease --preid=nightly --follow-tags
 
