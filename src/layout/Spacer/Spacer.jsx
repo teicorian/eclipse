@@ -1,13 +1,16 @@
-function Spacer(props) {
-    const styles = {
-        height: `${props.h}rem`,
-        width: `${props.w}rem`,
-    };
-    return (
-        <div style={styles}>
-            {props.children}
-        </div>
-    );
+import React from 'react';
+
+function Spacer({ w, h, ...props }) {
+	const styles = {
+		width: w ? `${w}rem` : undefined,
+		height: h ? `${h}rem` : undefined,
+	};
+
+	return (
+		<div style={styles} {...props}>
+			Spacer
+		</div>
+	);
 }
 
 export default Spacer;

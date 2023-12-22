@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../../general/Button/Button';
 import Logo from '../../brand/Logo/Logo';
 import NavLink from '../../navigation/NavLink/NavLink';
+import Spacer from '../../layout/Spacer/Spacer';
 import './Header.css';
 
 const Header = ({ wrap, main, ...props }) => {
@@ -40,6 +41,7 @@ Header.defaultProps = {
 	wrap: (
 		<>
 			<Logo />
+			<Spacer w={8} />
 			<NavLink to='/' label='Home' currentPath='/' />
 			<NavLink to='/services' label='Services' />
 			<NavLink to='/about' label='About' />

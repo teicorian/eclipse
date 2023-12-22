@@ -10,7 +10,11 @@ const Card = ({ header, body, footer, ...props }) => {
 		content.push(<div className={'card-header'}>{header}</div>);
 	}
 	if (body) {
-		content.push(<div className={'card-body'}>{body}</div>);
+		content.push(
+			<div className={'card-body'} {...props}>
+				{body}
+			</div>
+		);
 	}
 	if (footer) {
 		const footerStyle = [];
