@@ -22,6 +22,7 @@ export { default as Button } from './general/Button/Button';
 // ################### Layout Components ############################ //
 // ################################################################## //
 
+export { default as Page } from './layout/Page/Page';
 export { default as Header } from './layout/Header/Header';
 export { default as Spacer } from './layout/Spacer/Spacer';
 
