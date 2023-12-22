@@ -28,8 +28,6 @@ jobs:
 
             - name: Bump version
               run: |
-                  npm version minor -m "v%s"
-                  VERSION=$(node -p "require('./package.json').version")
-                  git tag ${VERSION}
-                  git push --follow-tags
-                  git push --tags
+                  yarn version --patch
+                  git commit -m "bump version"
+                  git push
