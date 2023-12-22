@@ -37,7 +37,7 @@ jobs:
 
             - name: Version bump (prerelease)
               run: |
-                  git add package.json
+                  git add .
                   git commit -m "Bump version to $(node -p -e "require('./package.json').version")"
                   git push --follow-tags
                   yarn version --prerelease --preid=nightly --follow-tags
