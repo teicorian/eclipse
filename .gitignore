@@ -27,3 +27,5 @@ dist
 components
 
 *.code-workspace
+storybook-static/
+types/
