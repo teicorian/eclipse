@@ -1,4 +1,5 @@
 name: Publish Nightly to npm
+
 on:
     push:
         branches:
@@ -6,29 +7,31 @@ on:
     pull_request:
         branches:
             - nightly
+
 jobs:
     publish:
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
-                uses: actions/checkout@v4
+              uses: actions/checkout@v4
+
             - name: Set up Node.js
-                uses: actions/setup-node@v4
-                with:
-                    node-version: '20'
-                    registry-url: 'https://registry.npmjs.org'
-            
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  registry-url: 'https://registry.npmjs.org'
+
             - name: Install dependencies
-                run: npm install
-            
+              run: npm install
+
             - name: Clean build artifacts
-                run: npm run clean
-        
+              run: npm run clean
+
             - name: Version bump (prerelease)
-                run: npm version prerelease --preid=nightly
-        
+              run: npm version prerelease --preid=nightly
+
             - name: Publish to npm (nightly)
-                run: npm publish --tag nightly
-                env:
-                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: npm publish --tag nightly
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
