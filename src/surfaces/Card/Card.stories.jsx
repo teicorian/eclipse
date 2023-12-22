@@ -11,4 +11,11 @@ export default {
 };
 
 export const Primary = (args) => <Card {...args} />;
-Primary.args = {};
+Primary.args = {
+	header: 'Header',
+	body: 'Body',
+	footer: {
+		content: 'Footer',
+		style: 'active',
+	},
+};
