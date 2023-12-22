@@ -28,13 +28,11 @@ jobs:
             - name: Clean build artifacts
               run: yarn clean
 
-              - name: Version bump (prerelease)
-                run: |
-                  git config --global user.email "you@example.com"
-                  git config --global user.name "Your Name"
+            - name: Version bump (prerelease)
+              run: |
+                  git config --global user.email "tj@teicor.com"
+                  git config --global user.name "TJ Bredemeyer"
                   yarn version --prerelease --preid=nightly
 
             - name: Publish to npm (nightly)
-              run: yarn publish --tag nightly
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: yar
