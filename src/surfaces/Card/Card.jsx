@@ -42,5 +42,8 @@ export default Card;
 Card.propTypes = {
 	header: PropTypes.string,
 	body: PropTypes.string,
-	footer: PropTypes.string,
+	footer: PropTypes.shape({
+		style: PropTypes.string,
+		content: PropTypes.string,
+	}),
 };
