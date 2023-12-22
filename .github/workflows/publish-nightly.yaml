@@ -30,9 +30,9 @@ jobs:
 
             - name: Version bump (prerelease)
               run: |
-                  git config --global user.email "tj@teicor.com"
-                  git config --global user.name "TJ Bredemeyer"
-                  yarn version --prerelease --preid=nightly
+                  git config --global user.email "${{ secrets.GH_EMAIL }}"
+                  git config --global user.name "${{ secrets.GH_USER }}"
+                  yarn version --prerelease --preid=nightly --follow-tags
 
             - name: Publish to npm (nightly)
               run: yarn publish --tag nightly
