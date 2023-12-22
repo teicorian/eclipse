@@ -3,7 +3,7 @@ name: Publish Nightly to npm
 on:
     pull_request:
         branches:
-            - nightly
+            - main
 
 jobs:
     publish:
@@ -24,11 +24,7 @@ jobs:
             - name: Clean build
               run: yarn clean
 
-            - name: Bump version
-              run: |
-                  yarn version --prerelease --preid=nightly
-
-            - name: Publish to npm (nightly)
-              run: yarn publish --tag nightly
+            - name: Publish to npm
+              run: yarn publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
