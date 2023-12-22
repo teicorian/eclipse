@@ -2,7 +2,7 @@
 
 .eclipse-button {
 	font-family: var(--font-family);
-	font-weight: var(--bold);
+	font-size: var(--base-font-size);
 	border: 0;
 	border-radius: var(--border-radius);
 	cursor: pointer;

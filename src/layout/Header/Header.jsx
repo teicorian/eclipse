@@ -1,53 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '../../general/Button/Button';
+import Button from '../../general/Button/Button';
+import Logo from '../../brand/Logo/Logo';
+import NavLink from '../../navigation/NavLink/NavLink';
+import Spacer from '../../layout/Spacer/Spacer';
 import './Header.css';
 
-const Header = ({ left, center, right }) => {
+const Header = ({ wrap, main, ...props }) => {
 	const Container = [];
-	if (left) {
-		Container.push(<Header.Left content={left} key='left' />);
+	if (wrap) {
+		Container.push(<Header.Wrap content={wrap} key='wrap' />);
 	}
-	if (center) {
-		Container.push(<Header.Center content={center} key='center' />);
-	}
-	if (right) {
-		Container.push(<Header.Right content={right} key='right' />);
+	if (main) {
+		Container.push(<Header.Main content={main} key='main' />);
 	}
 
 	return (
-		<div className={'container'}>
-			<div className={'wrapper'}>{Container}</div>
+		<div className={'navigation'} {...props}>
+			<div className={'container'}>{Container}</div>
 		</div>
 	);
 };
 
-Header.Left = ({ content }) => {
-	return <div className={'header-left'}>{content}</div>;
+Header.Wrap = ({ content }) => {
+	return <div className={'wrap'}>{content}</div>;
 };
 
-Header.Center = ({ content }) => {
-	return <div className={'header-center'}>{content}</div>;
-};
-
-Header.Right = ({ content }) => {
-	return <div className={'header-right'}>{content}</div>;
+Header.Main = ({ content }) => {
+	return <div className={'main'}>{content}</div>;
 };
 
 export default Header;
 
 Header.propTypes = {
-	left: PropTypes.element,
-	center: PropTypes.string,
-	right: PropTypes.string,
+	wrap: PropTypes.element,
+	main: PropTypes.element,
 };
 
 Header.defaultProps = {
-	left: (
+	wrap: (
 		<>
-			<div>Hello</div> <div>Hello</div>
+			<Logo />
+			<Spacer w={8} />
+			<NavLink to='/' label='Home' currentPath='/' />
+			<NavLink to='/services' label='Services' />
+			<NavLink to='/about' label='About' />
+			<NavLink to='/contact' label='Contact' />
 		</>
 	),
-	center: 'Center',
-	right: 'Right',
+	main: (
+		<>
+			<Button label='Log In' size='small' />
+			<Button label='Sign Up' size='small' />
+		</>
+	),
 };
