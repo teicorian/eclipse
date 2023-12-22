@@ -39,7 +39,7 @@ jobs:
               run: |
                   git add .
                   git commit -m "Bump version to $(node -p -e "require('./package.json').version")"
-                  git push --follow-tags
+                  git push origin HEAD:refs/heads/nightly --follow-tags
                   yarn version --prerelease --preid=nightly --follow-tags
 
             - name: Publish to npm (nightly)
