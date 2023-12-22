@@ -23,15 +23,15 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Install dependencies
-              run: npm install
+              run: yarn
 
             - name: Clean build artifacts
-              run: npm run clean
+              run: yarn clean
 
             - name: Version bump (prerelease)
-              run: npm version prerelease --preid=nightly
+              run: yarn version --prerelease --preid=nightly
 
             - name: Publish to npm (nightly)
-              run: npm publish --tag nightly
+              run: yarn publish --tag nightly
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
