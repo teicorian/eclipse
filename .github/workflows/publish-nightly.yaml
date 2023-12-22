@@ -1,9 +1,6 @@
 name: Publish Nightly to npm
 
 on:
-    push:
-        branches:
-            - nightly
     pull_request:
         branches:
             - nightly
@@ -24,6 +21,13 @@ jobs:
 
             - name: Install dependencies
               run: yarn
+
+            - name: Bump version
+              run: |
+                  git config --global user.name ${{ secrets.GH_USER }}
+                  git config --global user.email ${{ secrets.GH_EMAIL }}
+                  yarn version --patch
+                  git push
 
             - name: Clean build artifacts
               run: yarn clean
