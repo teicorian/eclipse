@@ -19,7 +19,6 @@ jobs:
               run: yarn
 
             - name: Bump version (if not main or nightly)
-              uses: actions/checkout@v2
               run: |
                   git config --global user.email "${{ secrets.GH_EMAIL }}"
                   git config --global user.name "${{ secrets.GH_USER }}"
