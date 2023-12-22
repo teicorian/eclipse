@@ -1,12 +1,12 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.22",
+	"version": "1.0.23",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
-	"main": "dist/index.js",
+	"main": "components/index.js",
 	"files": [
-		"dist",
+		"components",
 		"README.md",
 		"LICENSE"
 	],
