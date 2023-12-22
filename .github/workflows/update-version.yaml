@@ -1,7 +1,6 @@
 name: Bump Version and Commit
 on:
     push:
-        branches: ['*']
         branches-ignore: ['master', 'nightly']
 jobs:
     bump-version:
