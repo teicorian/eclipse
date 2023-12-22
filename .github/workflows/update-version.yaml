@@ -14,6 +14,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: '20'
+                  token: ${{ secrets.GH_TOKEN }}
 
             - name: Install dependencies
               run: yarn
