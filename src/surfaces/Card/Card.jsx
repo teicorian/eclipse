@@ -44,12 +44,3 @@ Card.propTypes = {
 	body: PropTypes.string,
 	footer: PropTypes.string,
 };
-
-Card.defaultProps = {
-	header: 'Header',
-	body: 'Body',
-	footer: {
-		content: 'Footer',
-		style: 'active',
-	},
-};
