@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({ header, body, footer, ...props }) => {
-	const content = [];
+	const cardContent = [];
 	if (header) {
-		content.push(<div className={'card-header'}>{header}</div>);
+		cardContent.push(<div className={'card-header'}>{header}</div>);
 	}
 	if (body) {
-		content.push(
+		cardContent.push(
 			<div className={'card-body'} {...props}>
 				{body}
 			</div>
@@ -24,7 +24,7 @@ const Card = ({ header, body, footer, ...props }) => {
 		if (footer.style === 'warning') {
 			footerStyle.push('warning');
 		}
-		content.push(
+		cardContent.push(
 			<div className={`card-footer ${footerStyle ? footerStyle : ''}`}>
 				{footer.content}
 			</div>
@@ -32,7 +32,7 @@ const Card = ({ header, body, footer, ...props }) => {
 	}
 	return (
 		<div className={`card`} {...props}>
-			<div className={`card-wrap`}>{content}</div>
+			<div className={`card-wrap`}>{cardContent}</div>
 		</div>
 	);
 };
