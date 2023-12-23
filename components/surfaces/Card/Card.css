@@ -1,0 +1,51 @@
+@import '../../styles/base.css';
+
+.sb-story {
+	padding: 2rem 0;
+	padding-bottom: 3rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: var(--gutter);
+	border: 1px solid var(--trim);
+	border-radius: var(--border-radius);
+}
+
+.card-wrap {
+	color: var(--color);
+	width: 100%;
+}
+
+.card-header {
+	width: 100%;
+	font-weight: var(--bold);
+	padding: var(--gutter);
+	border-bottom: 1px solid var(--trim);
+}
+
+.card-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: calc(4 * var(--gutter));
+}
+
+.card-footer {
+	color: var(--color-secondary);
+	width: 100%;
+	padding: var(--gutter);
+	border-top: 1px solid var(--trim);
+}
+
+.card-footer.deactivated {
+	background-color: var(--background-secondary);
+}
+
+.card-footer.warning {
+	background-color: var(--background-secondary);
+}
