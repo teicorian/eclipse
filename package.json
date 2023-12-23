@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.47",
+	"version": "1.0.48",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -24,13 +24,13 @@
 		"storybook": "^7.6.5"
 	},
 	"scripts": {
-		"start": "yarn storybook",
 		"publish": "npm run clean && cross-env NODE_ENV=production babel src --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
 		"clean": "rimraf components",
 		"push": "yarn patch && git add . && git commit -m '.' && git push",
 		"patch": "yarn version --patch",
 		"minor": "yarn version --minor",
 		"major": "yarn version --major",
+		"start": "yarn storybook",
 		"storybook-build": "storybook build",
 		"storybook-serve": "storybook && npx serve storybook-static",
 		"storybook": "storybook dev -p 6006"
