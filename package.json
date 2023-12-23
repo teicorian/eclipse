@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.64",
+	"version": "1.0.65",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
