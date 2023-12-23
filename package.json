@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.41",
+	"version": "1.0.42",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -11,8 +11,13 @@
 		"LICENSE"
 	],
 	"dependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.23.6",
+		"@babel/preset-env": "^7.23.6",
+		"@babel/preset-react": "^7.23.3",
 		"babel-preset-react-app": "^10.0.1",
 		"cra-template": "1.2.0",
+		"cross-env": "^7.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.19.0",
@@ -22,7 +27,6 @@
 		"start": "yarn storybook",
 		"publish": "yarn clean && cross-env NODE_ENV=production babel src --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
 		"clean": "rimraf components",
-		"prerelease": "yarn version --prerelease",
 		"patch": "yarn version --patch",
 		"minor": "yarn version --minor",
 		"major": "yarn version --major",
