@@ -1,0 +1,42 @@
+/*
+Global :root variables, for those independent of themes
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import './reset.css';
+
+:root {
+	--font-body: 'Inter', var(--font-fallback);
+	--font-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-body: var(--font-fallback);
+	--base-font-size: 14px;
+	--font-weight: 400;
+	--font-content-line-height: 1.5;
+	--font-size-small: 0.875rem;
+	--font-size-large: 1.25rem;
+	--bold: 600;
+
+	--color: #161616;
+	--color-secondary: #a3a3a3;
+
+	--background: #ffffff;
+	--background-secondary: #5b5b5b;
+
+	--hover: #f6f6f6;
+	--hover-color: #313131;
+	--hover-secondary: #313131;
+
+	--trim: #e7e7e7;
+	--trim-secondary: #ebebeb;
+
+	--gutter: 0.86rem;
+	--border-radius: 0.25rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
