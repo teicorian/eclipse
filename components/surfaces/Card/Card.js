@@ -17,14 +17,14 @@ var Card = function Card(_ref) {
     body = _ref.body,
     footer = _ref.footer,
     props = _objectWithoutProperties(_ref, _excluded);
-  var content = [];
+  var cardContent = [];
   if (header) {
-    content.push( /*#__PURE__*/_react["default"].createElement("div", {
+    cardContent.push( /*#__PURE__*/_react["default"].createElement("div", {
       className: 'card-header'
     }, header));
   }
   if (body) {
-    content.push( /*#__PURE__*/_react["default"].createElement("div", _extends({
+    cardContent.push( /*#__PURE__*/_react["default"].createElement("div", _extends({
       className: 'card-body'
     }, props), body));
   }
@@ -36,7 +36,7 @@ var Card = function Card(_ref) {
     if (footer.style === 'warning') {
       footerStyle.push('warning');
     }
-    content.push( /*#__PURE__*/_react["default"].createElement("div", {
+    cardContent.push( /*#__PURE__*/_react["default"].createElement("div", {
       className: "card-footer ".concat(footerStyle ? footerStyle : '')
     }, footer.content));
   }
@@ -44,7 +44,7 @@ var Card = function Card(_ref) {
     className: "card"
   }, props), /*#__PURE__*/_react["default"].createElement("div", {
     className: "card-wrap"
-  }, content));
+  }, cardContent));
 };
 var _default = exports["default"] = Card;
 Card.propTypes = {
