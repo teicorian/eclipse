@@ -1,28 +1,35 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.20",
+	"version": "1.0.52",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
-	"main": "dist/index.js",
+	"main": "components/index.js",
 	"files": [
-		"dist",
+		"components",
 		"README.md",
 		"LICENSE"
 	],
 	"dependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.23.6",
+		"@babel/preset-env": "^7.23.6",
+		"@babel/preset-react": "^7.23.3",
 		"babel-preset-react-app": "^10.0.1",
 		"cra-template": "1.2.0",
+		"cross-env": "^7.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.19.0",
 		"storybook": "^7.6.5"
 	},
 	"scripts": {
+		"publish": "npm run clean && babel src --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__ && npm publish",
+		"clean": "rimraf components",
+		"patch": "yarn version --patch",
+		"minor": "yarn version --minor",
+		"major": "yarn version --major",
 		"start": "yarn storybook",
-		"deploy": "yarn publish && git push origin nightly",
-		"publish": "npm run clean && cross-env NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
-		"clean": "rimraf dist",
 		"storybook-build": "storybook build",
 		"storybook-serve": "storybook && npx serve storybook-static",
 		"storybook": "storybook dev -p 6006"
@@ -66,6 +73,7 @@
 		"@storybook/addon-essentials": "^7.6.5",
 		"@storybook/addon-links": "^7.6.5",
 		"@storybook/react-webpack5": "^7.6.5",
+		"cross-env": "^7.0.3",
 		"react-scripts": "^5.0.1",
 		"storybook": "^7.6.5"
 	}
