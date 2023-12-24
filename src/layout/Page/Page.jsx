@@ -4,24 +4,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Page.css';
 
-const Card = ({ layout, ...props }) => {
-	const styles = [];
-
-	if (layout === 'fullscreen') {
-		styles.push('fullscreen');
-	}
-	if (layout === 'centered') {
-		styles.push('centered');
+const Page = ({ layout, max, children, ...props }) => {
+	const maxWidth = [];
+	if (max) {
+		maxWidth.push(`maxWidth--${max}`);
 	}
 	return (
 		<div className={`page`} {...props}>
-			<div className={`page-wrap ${layout ? styles : ''}`}>{content}</div>
+			<div className={`page container ${layout ? layout : ''}`}>
+				<div className={`page-wrapper ${max ? maxWidth : ''}`}>
+					{children}
+				</div>
+			</div>
 		</div>
 	);
 };
 
-export default Card;
+export default Page;
 
-Card.propTypes = {
+Page.propTypes = {
 	layout: PropTypes.string,
+	max: PropTypes.string,
 };

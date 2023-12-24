@@ -1,18 +1,19 @@
 @import '../../styles/base.css';
 
 .sb-story {
-	padding: 2rem 0;
+	padding: 0 0 2rem 0;
 	padding-bottom: 3rem;
+	background-color: #f9f9f9;
 }
 
 .navigation {
+	background-color: var(--background);
 	display: flex;
 	flex-direction: column;
 	align-items: space-between;
 	justify-content: center;
 	width: 100%;
-	border-bottom: 1px solid #eaeaea;
-	height: 4rem;
+	border-bottom: 1px solid var(--trim);
 }
 
 .navigation .container {
@@ -37,4 +38,21 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: var(--gutter);
+}
+
+.navigation .sub-navigation-container {
+	padding: 0 var(--gutter);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: calc(-1 * var(--gutter));
+}
+
+.navigation .sub-navigation-container .sub-navigation-main {
+	/* padding: 1rem 0; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
 }

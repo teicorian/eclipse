@@ -7,20 +7,29 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	height: 4rem;
+	padding: var(--gutter) 0;
 }
 
 .navlink.active {
 	color: var(--color);
 	border-bottom: 2px solid #000000;
-	margin-bottom: -2px;
+	margin-bottom: -1px;
 }
 
-.navlink-wrap {
+.navlink-wrap-nohover {
 	padding: 0.3rem 0.5rem;
 }
 
-.navlink-wrap:hover {
+.navlink-wrap-nohover:hover {
+	color: var(--hover-color);
+	cursor: pointer;
+}
+
+.navlink-wrap-hover {
+	padding: 0.3rem 0.5rem;
+}
+
+.navlink-wrap-hover:hover {
 	color: var(--hover-color);
 	background: var(--hover);
 	border-radius: var(--border-radius);

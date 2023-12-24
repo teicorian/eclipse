@@ -27,6 +27,33 @@
 	background-color: var(--hover);
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
+.eclipse-button--warning {
+	color: var(--background);
+	background-color: var(--button--warning);
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
+}
+.eclipse-button--warning:hover {
+	color: var(--background);
+	background-color: var(--hover--warning);
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
+}
+.eclipse-button--deactivated {
+	color: var(--color--deactivated);
+	background-color: var(--button--deactivated);
+	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
+}
+.eclipse-button--deactivated:hover {
+	color: var(--color--deactivated);
+	background-color: var(--button--deactivated);
+	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
+	cursor: not-allowed;
+}
+.eclipse-button :disabled {
+	color: var(--color--deactivated);
+	background-color: var(--button--deactivated);
+	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
+}
+
 .eclipse-button--small {
 	font-size: 0.75rem;
 	padding: 0.63rem 1rem;

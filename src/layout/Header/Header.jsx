@@ -1,57 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Button from '../../general/Button/Button';
-import Logo from '../../brand/Logo/Logo';
-import NavLink from '../../navigation/NavLink/NavLink';
-import Spacer from '../../layout/Spacer/Spacer';
 import './Header.css';
 
-const Header = ({ wrap, main, ...props }) => {
-	const Container = [];
-	if (wrap) {
-		Container.push(<Header.Wrap content={wrap} key='wrap' />);
-	}
-	if (main) {
-		Container.push(<Header.Main content={main} key='main' />);
-	}
-
+const Header = ({ children, ...props }) => {
 	return (
 		<div className={'navigation'} {...props}>
-			<div className={'container'}>{Container}</div>
+			{children}
 		</div>
 	);
 };
 
-Header.Wrap = ({ content }) => {
-	return <div className={'wrap'}>{content}</div>;
+Header.TopNavigation = ({ children }) => {
+	return <div className={'container'}>{children}</div>;
 };
 
-Header.Main = ({ content }) => {
-	return <div className={'main'}>{content}</div>;
+Header.Wrap = ({ children }) => {
+	return <div className={'wrap'}>{children}</div>;
+};
+
+Header.Main = ({ children }) => {
+	return <div className={'main'}>{children}</div>;
+};
+
+Header.SubNavigation = ({ children }) => {
+	return (
+		<div className={'sub-navigation-container'}>
+			<div className={'sub-navigation-main'}>{children}</div>
+		</div>
+	);
 };
 
 export default Header;
-
-Header.propTypes = {
-	wrap: PropTypes.element,
-	main: PropTypes.element,
-};
-
-Header.defaultProps = {
-	wrap: (
-		<>
-			<Logo />
-			<Spacer w={8} />
-			<NavLink to='/' label='Home' currentPath='/' />
-			<NavLink to='/services' label='Services' />
-			<NavLink to='/about' label='About' />
-			<NavLink to='/contact' label='Contact' />
-		</>
-	),
-	main: (
-		<>
-			<Button label='Log In' size='small' />
-			<Button label='Sign Up' size='small' />
-		</>
-	),
-};

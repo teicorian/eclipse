@@ -21,7 +21,8 @@ var Primary = exports.Primary = function Primary(args) {
 };
 Primary.args = {
   primary: true,
-  label: 'Button'
+  label: 'Button',
+  deactivated: true
 };
 var Secondary = exports.Secondary = function Secondary(args) {
   return /*#__PURE__*/_react["default"].createElement(_Button["default"], args);

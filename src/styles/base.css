@@ -15,6 +15,7 @@ Global :root variables, for those independent of themes
 	--font-size-small: 0.875rem;
 	--font-size-large: 1.25rem;
 	--bold: 600;
+	--semi-bold: 500;
 
 	--color: #161616;
 	--color-secondary: #a3a3a3;
@@ -28,9 +29,20 @@ Global :root variables, for those independent of themes
 
 	--trim: #e7e7e7;
 	--trim-secondary: #ebebeb;
+	--trim--input: #e7e7e7;
 
 	--gutter: 0.86rem;
 	--border-radius: 0.25rem;
+
+	--color--deactivated: #7c7c7c;
+	--background--deactivated: #f9f9f9;
+	--button--deactivated: #f0f0f0;
+
+	--color--warning: #ee2b3a;
+	--button--warning: #d42931;
+	--hover--warning: #a4242b;
+	--background--warning: #fdebeb;
+	--trim--warning: #fcd3d3;
 }
 
 .hidden {

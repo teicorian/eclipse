@@ -14,6 +14,7 @@ export const Primary = (args) => <Button {...args} />;
 Primary.args = {
 	primary: true,
 	label: 'Button',
+	deactivated: true,
 };
 
 export const Secondary = (args) => <Button {...args} />;

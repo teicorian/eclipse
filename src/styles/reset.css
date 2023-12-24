@@ -43,6 +43,7 @@ body {
 	font-family: var(--font-body);
 	font-size: var(--base-font-size);
 	line-height: var(--font-content-line-height);
+	letter-spacing: 0.025rem;
 	text-rendering: optimizeSpeed;
 }
 
@@ -68,6 +69,7 @@ button,
 textarea,
 select {
 	font: inherit;
+	letter-spacing: 0.045rem;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
