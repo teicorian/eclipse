@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.92",
+	"version": "1.0.93",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -8,7 +8,8 @@
 	"files": [
 		"components",
 		"README.md",
-		"LICENSE"
+		"LICENSE",
+		"src/package.json"
 	],
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.5.1",
