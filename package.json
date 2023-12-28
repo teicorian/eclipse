@@ -27,13 +27,6 @@
 		"storybook-serve": "storybook && npx serve storybook-static",
 		"storybook": "storybook dev -p 6006"
 	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest",
-			"plugin:storybook/recommended"
-		]
-	},
 	"bugs": {
 		"url": "https://github.com/teicorian/eclipse/issues/new/choose"
 	},
@@ -64,13 +57,20 @@
 		"@babel/preset-react": "^7.23.3",
 		"@storybook/addon-docs": "^7.6.5",
 		"@storybook/addon-essentials": "^7.6.5",
+		"@storybook/addon-interactions": "^7.6.6",
 		"@storybook/addon-links": "^7.6.5",
+		"@storybook/addon-onboarding": "^1.0.10",
+		"@storybook/blocks": "^7.6.6",
+		"@storybook/builder-webpack5": "^8.0.0-alpha.5",
+		"@storybook/preset-create-react-app": "^7.6.6",
 		"@storybook/react-webpack5": "^7.6.5",
 		"cross-env": "^7.0.3",
+		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.19.0",
 		"react-scripts": "^5.0.1",
 		"storybook": "^7.6.5"
-	}
+	},
+	"packageManager": "yarn@4.0.2"
 }

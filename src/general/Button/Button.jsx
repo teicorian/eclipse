@@ -44,6 +44,8 @@ Button.propTypes = {
 	 * Is this the principal call to action on the page?
 	 */
 	primary: PropTypes.bool,
+	warning: PropTypes.bool,
+	deactivated: PropTypes.bool,
 	/**
 	 * How large should the button be?
 	 */

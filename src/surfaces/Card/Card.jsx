@@ -20,9 +20,13 @@ Card.Header = ({ children, ...props }) => {
 	);
 };
 
-Card.Body = ({ row, children, ...props }) => {
+Card.Body = ({ row, centered, children, ...props }) => {
 	return (
-		<div className={`card-body ${row ? 'row' : ''}`} {...props}>
+		<div
+			className={`${centered ? 'card-body-centered' : 'card-body'} 
+				${row ? 'row' : ''}`}
+			{...props}
+		>
 			{children}
 		</div>
 	);

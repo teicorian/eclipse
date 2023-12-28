@@ -48,11 +48,6 @@
 	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
 	cursor: not-allowed;
 }
-.eclipse-button :disabled {
-	color: var(--color--deactivated);
-	background-color: var(--button--deactivated);
-	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
-}
 
 .eclipse-button--small {
 	font-size: 0.75rem;

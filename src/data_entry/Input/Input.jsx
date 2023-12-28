@@ -1,9 +1,8 @@
 // NavLink.js
 
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
+import { Eye, EyeSlash } from '../../icons';
 import './Input.css';
 
 const Input = ({
@@ -42,11 +41,7 @@ const Input = ({
 			/>
 			{type === 'password' && (
 				<div className={'icon'} onClick={handleButtonClick}>
-					{isPasswordVisible ? (
-						<FontAwesomeIcon icon={faEyeSlash} />
-					) : (
-						<FontAwesomeIcon icon={faEye} />
-					)}
+					{isPasswordVisible ? <EyeSlash /> : <Eye />}
 				</div>
 			)}
 		</div>

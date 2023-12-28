@@ -35,6 +35,16 @@
 		calc(1.75 * var(--gutter)) calc(1.5 * var(--gutter));
 }
 
+.card .card-body-centered {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: calc(1.25 * var(--gutter)) calc(1.5 * var(--gutter))
+		calc(1.75 * var(--gutter)) calc(1.5 * var(--gutter));
+}
+
 .card .card-body.row {
 	display: flex;
 	flex-direction: row;

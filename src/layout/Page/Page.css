@@ -26,6 +26,7 @@
 
 .page.container.centered {
 	width: 100%;
+	height: calc(100vh - 200px);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -41,10 +42,10 @@
 	align-items: flex-start;
 }
 
-.page.wrapper.maxWidth--320 {
+.page .page-wrapper.maxWidth--320 {
 	max-width: 320px;
 }
 
-.page.wrapper.maxWidth--940 {
+.page .page-wrapper.maxWidth--940 {
 	max-width: 940px;
 }

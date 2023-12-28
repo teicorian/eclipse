@@ -9,7 +9,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 require("./Card.css");
 var _excluded = ["type", "children"],
   _excluded2 = ["children"],
-  _excluded3 = ["row", "children"],
+  _excluded3 = ["row", "centered", "children"],
   _excluded4 = ["children"],
   _excluded5 = ["children"]; // NavLink.js
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -33,10 +33,11 @@ Card.Header = function (_ref2) {
 };
 Card.Body = function (_ref3) {
   var row = _ref3.row,
+    centered = _ref3.centered,
     children = _ref3.children,
     props = _objectWithoutProperties(_ref3, _excluded3);
   return /*#__PURE__*/_react["default"].createElement("div", _extends({
-    className: "card-body ".concat(row ? 'row' : '')
+    className: "".concat(centered ? 'card-body-centered' : 'card-body', " \n\t\t\t\t").concat(row ? 'row' : '')
   }, props), children);
 };
 Card.Footer = function (_ref4) {

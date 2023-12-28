@@ -4,6 +4,7 @@ import Button from '../../general/Button/Button';
 import Logo from '../../brand/Logo/Logo';
 import NavLink from '../../navigation/NavLink/NavLink';
 import Spacer from '../../layout/Spacer/Spacer';
+import { Bars } from '../../icons';
 
 export default {
 	title: 'Layout/Header',
@@ -44,6 +45,14 @@ Primary.args = {
 				<NavLink label='Services' to='/services' hover />
 				<NavLink label='Pricing' to='/pricing' hover />
 			</Header.SubNavigation>
+			<Header.Mobile>
+				<Header.MobileBrand>
+					<Logo />
+				</Header.MobileBrand>
+				<Header.MobileButton>
+					<Bars />
+				</Header.MobileButton>
+			</Header.Mobile>
 		</Header>
 	),
 };
