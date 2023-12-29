@@ -12,7 +12,13 @@ const PFP = ({ firstName, lastName, src, onClick, ...props }) => {
 	}
 
 	return (
-		<div className={'pfp'} {...props} onClick={onClick}>
+		<div
+			className={'pfp'}
+			role='button'
+			tabIndex='0'
+			onClick={onClick}
+			{...props}
+		>
 			{icon.asset}
 		</div>
 	);
