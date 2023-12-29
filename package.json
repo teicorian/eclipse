@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.0.102",
+	"version": "1.1.0",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -11,17 +11,10 @@
 		"LICENSE",
 		"src/package.json"
 	],
-	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.5.1",
-		"@fortawesome/free-regular-svg-icons": "^6.5.1",
-		"@fortawesome/react-fontawesome": "^0.2.0"
-	},
+	"dependencies": {},
 	"scripts": {
 		"build": "npm run clean && babel src --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__ && yarn publish",
 		"clean": "rimraf components",
-		"patch": "yarn version --patch",
-		"minor": "yarn version --minor",
-		"major": "yarn version --major",
 		"start": "yarn storybook",
 		"storybook-build": "storybook build",
 		"storybook-serve": "storybook && npx serve storybook-static",
