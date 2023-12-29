@@ -2,7 +2,16 @@ import React from 'react';
 import PFP from '../pfp/PFP';
 import './User.css';
 
-const User = ({ left, right, firstName, lastName, src, email, ...props }) => {
+const User = ({
+	left,
+	right,
+	firstName,
+	lastName,
+	src,
+	email,
+	onClick,
+	...props
+}) => {
 	const order = {};
 	const justify = {};
 	if (left) {
@@ -18,7 +27,7 @@ const User = ({ left, right, firstName, lastName, src, email, ...props }) => {
 		justify.user = 'flex-start';
 	}
 	return (
-		<div className={'user-card'} {...props}>
+		<div className={'user-card'} {...props} onClick={onClick}>
 			<div
 				className={'user-card-pfp'}
 				style={{ order: order.pfp, justifyContent: justify.pfp }}

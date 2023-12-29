@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './NavLink.css';
 
-const NavLink = ({ to, label, hover, currentPath, ...props }) => {
+const NavLink = ({ to, label, hover, currentPath, onClick, ...props }) => {
 	const isActive = currentPath === to;
 	const hoverStyle = [];
 
@@ -16,7 +16,10 @@ const NavLink = ({ to, label, hover, currentPath, ...props }) => {
 	}
 
 	return (
-		<div className={`navlink ${isActive ? 'active' : ''}`}>
+		<div
+			className={`navlink ${isActive ? 'active' : ''}`}
+			onClick={onClick}
+		>
 			<div className={`${hoverStyle}`} {...props}>
 				{label}
 			</div>

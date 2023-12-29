@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MobileNavLink.css';
 
-const MobileNavLink = ({ to, label, children, ...props }) => {
+const MobileNavLink = ({ to, label, onClick, children, ...props }) => {
 	return (
-		<div className={'mobile-navlink'}>
+		<div className={'mobile-navlink'} onClick={onClick}>
 			<div className={'label'}>{label}</div>
 			<div className={'action'}>{children}</div>
 		</div>
