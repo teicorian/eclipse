@@ -83,6 +83,15 @@
 	background-color: var(--background--deactivated);
 }
 
+.card.deactivated .card-footer .with-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
 .card.warning {
 	width: calc(100% - calc(2 * var(--gutter)));
 	display: flex;
@@ -99,4 +108,13 @@
 	color: var(--color--warning);
 	background-color: var(--background--warning);
 	border-top: 1px solid var(--trim--warning);
+}
+
+.card.warning .card-footer .with-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
 }
