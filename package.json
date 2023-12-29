@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.2.9",
+	"version": "1.2.10",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -11,10 +11,9 @@
 		"LICENSE",
 		"src/package.json"
 	],
-	"dependencies": {},
 	"scripts": {
 		"build": "npm run clean && npm run babel  && yarn publish",
-		"babel": "babel src --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
+		"babel": "babel src/components --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
 		"clean": "rimraf components",
 		"start": "yarn storybook",
 		"storybook-build": "storybook build",
@@ -59,12 +58,12 @@
 		"@storybook/preset-create-react-app": "^7.6.6",
 		"@storybook/react-webpack5": "^7.6.5",
 		"cross-env": "^7.0.3",
+		"npm-run-path": "^5.2.0",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.19.0",
 		"react-scripts": "^5.0.1",
 		"storybook": "^7.6.5"
-	},
-	"packageManager": "yarn@4.0.2"
+	}
 }
