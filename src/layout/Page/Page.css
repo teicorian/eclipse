@@ -17,7 +17,7 @@
 
 .page.container.fixed-width {
 	width: 100%;
-	max-width: 940px;
+	max-width: 1200px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
