@@ -20,6 +20,22 @@ const Page = ({ layout, max, children, ...props }) => {
 	);
 };
 
+Page.Header = ({ title, ...props }) => {
+	return (
+		<div className={'page-header'} {...props}>
+			<h1>{title}</h1>
+		</div>
+	);
+};
+
+Page.SideBar = ({ children, ...props }) => {
+	return (
+		<div className={'page-sidebar'} {...props}>
+			{children}
+		</div>
+	);
+};
+
 export default Page;
 
 Page.propTypes = {

@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	cursor: pointer;
 }
 
 .user-card .user-card-pfp {
@@ -24,8 +25,10 @@
 
 .user-card .user-card-user .user-card-name {
 	color: var(--color);
+	white-space: nowrap;
 }
 
 .user-card .user-card-user .user-card-email {
 	color: var(--color-secondary);
+	white-space: nowrap;
 }
