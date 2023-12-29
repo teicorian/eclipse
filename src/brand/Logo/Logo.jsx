@@ -7,18 +7,9 @@ import './Logo.css';
  */
 const Logo = ({ src, w, h, ...props }) => {
 	const source = src ? src : '/logo.svg';
-	const style = {};
-
-	if (w) {
-		style.width = w;
-	}
-
-	if (h) {
-		style.height = h;
-	}
 	return (
 		<a href='/'>
-			<div className={'logo'} style={style}>
+			<div className={'logo'}>
 				<img src={source} {...props} />
 			</div>
 		</a>

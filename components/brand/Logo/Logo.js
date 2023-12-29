@@ -21,18 +21,10 @@ var Logo = function Logo(_ref) {
     h = _ref.h,
     props = _objectWithoutProperties(_ref, _excluded);
   var source = src ? src : '/logo.svg';
-  var style = {};
-  if (w) {
-    style.width = w;
-  }
-  if (h) {
-    style.height = h;
-  }
   return /*#__PURE__*/_react["default"].createElement("a", {
     href: "/"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: 'logo',
-    style: style
+    className: 'logo'
   }, /*#__PURE__*/_react["default"].createElement("img", _extends({
     src: source
   }, props))));

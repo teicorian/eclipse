@@ -2,18 +2,14 @@
 
 @media only screen and (max-width: 768px) {
 	.navigation .container {
+		height: 0px !important;
 		visibility: hidden;
-	}
-	.navigation .mobile-container {
-		visibility: visible;
 	}
 }
 
 @media only screen and (min-width: 769px) {
-	.navigation .container {
-		visibility: visible;
-	}
 	.navigation .mobile-container {
+		height: 0px !important;
 		visibility: hidden;
 	}
 }
@@ -35,13 +31,6 @@
 }
 
 .navigation .container {
-	padding: 0 var(--gutter);
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.navigation .mobile-container {
 	padding: 0 var(--gutter);
 	display: flex;
 	flex-direction: row;
@@ -77,6 +66,7 @@
 .navigation .sub-navigation-container {
 	padding: 0 var(--gutter);
 	margin-top: calc(-1 * var(--gutter));
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -88,4 +78,74 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
+	overflow-x: scroll;
+	overflow-y: visible;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.navigation .sub-navigation-container .sub-navigation-main::-webkit-scrollbar {
+	display: none;
+}
+
+.navigation .mobile-container {
+	padding: 0 var(--gutter);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navigation .mobile-container .mobile-brand {
+	padding: var(--gutter) 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.navigation .mobile-container .mobile-button {
+	z-index: 1000;
+	padding: var(--gutter);
+	display: flex;
+	flex-direction: center;
+	align-items: center;
+	cursor: pointer;
+	width: 3rem;
+	height: 3rem;
+}
+
+.navigation .mobile-container .mobile-button:hover {
+	color: var(--hover);
+}
+
+.navigation .mobile-container .mobile-menu {
+	display: none;
+}
+
+.navigation .mobile-container .mobile-menu.active {
+	position: absolute;
+	top: calc(2.5rem + calc(2 * var(--gutter)));
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--background);
+	padding: var(--gutter);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-direction: flex-start;
+}
+
+.navigation .mobile-container .mobile-menu.active button {
+	width: 100%;
+}
+
+.navigation .mobile-container .mobile-menu h2 {
+	color: var(--color);
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding-top: var(--gutter);
+	width: 100%;
 }

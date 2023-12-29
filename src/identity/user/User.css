@@ -1,0 +1,31 @@
+.user-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.user-card .user-card-pfp {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.user-card .user-card-user {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+}
+
+.user-card .user-card-user .user-card-name {
+	color: var(--color);
+}
+
+.user-card .user-card-user .user-card-email {
+	color: var(--color-secondary);
+}

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
+import { Bars, Close } from '../../icons';
+import { logger } from '../../utilities/Logger';
 import './Header.css';
 
-import { Bars } from '../../icons';
-
-const Header = ({ children, ...props }) => {
-	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const toggleMobileMenu = () => {
-		setMobileMenuOpen(!isMobileMenuOpen);
-	};
+const Header = ({ border, children, ...props }) => {
+	const style = [];
+	if (!border) {
+		style.border = 'none';
+	}
 
 	return (
-		<div className={'navigation'} {...props}>
+		<div className={'navigation'} style={style} {...props}>
 			{children}
 		</div>
 	);
@@ -35,12 +35,7 @@ Header.Menu = ({ children }) => {
 };
 
 Header.Main = ({ children }) => {
-	return (
-		<div className={'main'}>
-			{children}
-			<Bars />
-		</div>
-	);
+	return <div className={'main'}>{children}</div>;
 };
 
 // Secondary Navigation
@@ -63,12 +58,23 @@ Header.MobileBrand = ({ children }) => {
 	return <div className={'mobile-brand'}>{children}</div>;
 };
 
-Header.MobileButton = ({ children }) => {
-	return <div className={'mobile-button'}>{children}</div>;
-};
-
 Header.MobileMenu = ({ children }) => {
-	return <div className={'mobile-menu'}>{children}</div>;
+	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const toggleMobileMenu = () => {
+		console.log('Toggle menu');
+		setMobileMenuOpen(!isMobileMenuOpen);
+	};
+
+	return (
+		<>
+			<div className={'mobile-button'} onClick={toggleMobileMenu}>
+				{isMobileMenuOpen ? <Close size={20} /> : <Bars size={20} />}
+			</div>
+			<div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+				{children}
+			</div>
+		</>
+	);
 };
 
 export default Header;

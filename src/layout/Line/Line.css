@@ -1,0 +1,15 @@
+.line {
+	background-color: var(--trim);
+}
+
+.line.horizontal {
+	width: 100%;
+	height: 1px;
+	background-color: var(--trim);
+}
+
+.line.vertical {
+	width: 1px;
+	height: 100%;
+	background-color: var(--trim);
+}

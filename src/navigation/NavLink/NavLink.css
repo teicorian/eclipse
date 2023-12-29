@@ -12,21 +12,23 @@
 
 .navlink.active {
 	color: var(--color);
-	border-bottom: 2px solid #000000;
-	margin-bottom: -2px;
+	box-shadow: inset 0px 0px 0px 0px #000, inset 0px -2px 0px 0px #000;
 }
 
 .navlink-wrap-nohover {
 	padding: 0.3rem 0.5rem;
+	transition: all 0.2s ease-in-out;
 }
 
 .navlink-wrap-nohover:hover {
 	color: var(--hover-color);
 	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 }
 
 .navlink-wrap-hover {
 	padding: 0.3rem 0.5rem;
+	transition: all 0.2s ease-in-out;
 }
 
 .navlink-wrap-hover:hover {
@@ -34,6 +36,7 @@
 	background: var(--hover);
 	border-radius: var(--border-radius);
 	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 }
 
 .navlink.sb-hover {

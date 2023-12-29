@@ -1,0 +1,40 @@
+@import '../../styles/base.css';
+
+.mobile-navlink {
+	color: var(--hover-color);
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--gutter) 0;
+	border-bottom: 1px solid var(--trim);
+	width: 100%;
+	cursor: pointer;
+}
+
+.mobile-navlink .label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.mobile-navlink .action {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.mobile-navlink path {
+	fill: var(--color-secondary);
+}
+
+.mobile-navlink:hover {
+	background-color: var(--hover);
+}
+
+.mobile-navlink:hover path {
+	fill: var(--hover-color);
+}
