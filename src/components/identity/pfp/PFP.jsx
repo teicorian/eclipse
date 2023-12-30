@@ -1,7 +1,7 @@
 import React from 'react';
 import './PFP.css';
 
-const PFP = ({ firstName, lastName, src, onClick, ...props }) => {
+const PFP = ({ firstName, lastName, src, size, onClick, ...props }) => {
 	const icon = {};
 	if (firstName && lastName) {
 		icon.asset = `${firstName[0]}${lastName[0]}`;
@@ -17,6 +17,7 @@ const PFP = ({ firstName, lastName, src, onClick, ...props }) => {
 			role='button'
 			tabIndex='0'
 			onClick={onClick}
+			style={{ width: `${size}rem`, height: `${size}rem` }}
 			{...props}
 		>
 			{icon.asset}

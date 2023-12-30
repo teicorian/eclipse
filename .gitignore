@@ -30,3 +30,5 @@ dist
 storybook-static/
 types/
 components/
+!/src/components/
+.yarn/

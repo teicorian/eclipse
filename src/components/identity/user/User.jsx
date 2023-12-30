@@ -5,6 +5,7 @@ import './User.css';
 const User = ({
 	left,
 	right,
+	size,
 	firstName,
 	lastName,
 	src,
@@ -32,7 +33,12 @@ const User = ({
 				className={'user-card-pfp'}
 				style={{ order: order.pfp, justifyContent: justify.pfp }}
 			>
-				<PFP firstName={firstName} lastName={lastName} src={src} />
+				<PFP
+					firstName={firstName}
+					lastName={lastName}
+					src={src}
+					size={size}
+				/>
 			</div>
 			<div
 				className={'user-card-user'}

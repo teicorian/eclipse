@@ -1,7 +1,7 @@
 // NavLink.js
 
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './NavLink.css';
 
@@ -16,13 +16,12 @@ const NavLink = ({ to, label, hover, currentPath, onClick, ...props }) => {
 	}
 
 	return (
-		<div
-			className={`navlink ${isActive ? 'active' : ''}`}
-			onClick={onClick}
-		>
-			<div className={`${hoverStyle}`} {...props}>
-				{label}
-			</div>
+		<div className={`navlink ${isActive ? 'active' : ''}`}>
+			<Link to={to} className={'link'}>
+				<div className={`${hoverStyle}`} {...props}>
+					{label}
+				</div>
+			</Link>
 		</div>
 	);
 };

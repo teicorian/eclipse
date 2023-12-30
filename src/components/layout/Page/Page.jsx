@@ -11,7 +11,7 @@ const Page = ({ layout, max, children, ...props }) => {
 	}
 	return (
 		<div className={`page`} {...props}>
-			<div className={`page container ${layout ? layout : ''}`}>
+			<div className={`page-container ${layout ? layout : ''}`}>
 				<div className={`page-wrapper ${max ? maxWidth : ''}`}>
 					{children}
 				</div>
@@ -20,10 +20,15 @@ const Page = ({ layout, max, children, ...props }) => {
 	);
 };
 
-Page.Header = ({ title, ...props }) => {
+Page.Header = ({ layout, bg, children, ...props }) => {
 	return (
-		<div className={'page-header'} {...props}>
-			<h1>{title}</h1>
+		<div className={`page-header ${bg ? 'bg' : ''}`}>
+			<div
+				className={`page-header-wrap ${layout ? layout : ''}`}
+				{...props}
+			>
+				<h1>{children}</h1>
+			</div>
 		</div>
 	);
 };
@@ -31,6 +36,14 @@ Page.Header = ({ title, ...props }) => {
 Page.SideBar = ({ children, ...props }) => {
 	return (
 		<div className={'page-sidebar'} {...props}>
+			{children}
+		</div>
+	);
+};
+
+Page.Body = ({ children, ...props }) => {
+	return (
+		<div className={'page-body'} {...props}>
 			{children}
 		</div>
 	);

@@ -36,7 +36,7 @@ Page.Header = function (_ref2) {
     props = _objectWithoutProperties(_ref2, _excluded2);
   return /*#__PURE__*/_react["default"].createElement("div", _extends({
     className: 'page-header'
-  }, props), title);
+  }, props), /*#__PURE__*/_react["default"].createElement("h1", null, title));
 };
 Page.SideBar = function (_ref3) {
   var children = _ref3.children,

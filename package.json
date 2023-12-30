@@ -15,10 +15,7 @@
 		"build": "npm run clean && npm run babel  && yarn publish",
 		"babel": "babel src/components --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
 		"clean": "rimraf components",
-		"start": "yarn storybook",
-		"storybook-build": "storybook build",
-		"storybook-serve": "storybook && npx serve storybook-static",
-		"storybook": "storybook dev -p 6006"
+		"start": "react-scripts start"
 	},
 	"bugs": {
 		"url": "https://github.com/teicorian/eclipse/issues/new/choose"
@@ -65,5 +62,17 @@
 		"react-router-dom": "^6.19.0",
 		"react-scripts": "^5.0.1",
 		"storybook": "^7.6.5"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
