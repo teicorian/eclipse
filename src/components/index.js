@@ -42,6 +42,7 @@ export { defaut as Line } from './layout/Line/Line';
 
 export { default as NavLink } from './navigation/NavLink/NavLink';
 export { default as MobileNavLink } from './navigation/MobileNavLink/MobileNavLink';
+export { default as SideBarLink } from './navigation/SideBarLink/SideBarLink';
 
 // ################################################################## //
 // ################### Other Components ############################# //

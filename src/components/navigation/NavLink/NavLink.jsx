@@ -17,7 +17,7 @@ const NavLink = ({ to, label, hover, currentPath, onClick, ...props }) => {
 
 	return (
 		<div className={`navlink ${isActive ? 'active' : ''}`}>
-			<Link to={to} className={'link'}>
+			<Link to={to} className={`link ${isActive ? 'active' : ''}`}>
 				<div className={`${hoverStyle}`} {...props}>
 					{label}
 				</div>

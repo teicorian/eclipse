@@ -4,10 +4,12 @@ import Header from '../components/layout/Header/Header';
 import Button from '../components/general/Button/Button';
 import Logo from '../components/brand/Logo/Logo';
 import NavLink from '../components/navigation/NavLink/NavLink';
+import SideBarLink from '../components/navigation/SideBarLink/SideBarLink';
 import Spacer from '../components/layout/Spacer/Spacer';
 import MobileNavLink from '../components/navigation/MobileNavLink/MobileNavLink';
 import User from '../components/identity/user/User';
 import Line from '../components/layout/Line/Line';
+import Card from '../components/surfaces/Card/Card';
 import { Add, OpenLink } from '../components/icons';
 
 const Home = () => {
@@ -22,7 +24,7 @@ const Home = () => {
 						<NavLink label='Guide' to='/guide' hover />
 						<NavLink label='Components' to='/components' hover />
 						<NavLink label='Hooks' to='/hooks' hover />
-						<NavLink label='Utilities' to='/utilities' />
+						<NavLink label='Utilities' to='/utilities' hover />
 					</Header.Wrap>
 					<Header.Main>
 						<NavLink label='Contact Us' to='/contact' hover />
@@ -77,13 +79,37 @@ const Home = () => {
 			</Page.Header>
 			<Page layout='fixed'>
 				<Page.SideBar>
-					<NavLink label='Nav Link' hover />
-					<NavLink label='Nav Link' hover />
-					<NavLink label='Nav Link' hover />
-					<NavLink label='Nav Link' hover />
-					<NavLink label='Nav Link' hover />
+					<SideBarLink label='Nav Link' hover />
+					<SideBarLink label='Nav Link' hover />
+					<SideBarLink label='Nav Link' hover />
+					<SideBarLink label='Nav Link' hover />
+					<SideBarLink label='Nav Link' hover />
 				</Page.SideBar>
-				<Page.Body>Hello</Page.Body>
+				<Page.Body>
+					<Card>
+						<Card.Header>Home Card</Card.Header>
+						<Card.Body>This is a card body</Card.Body>
+						<Card.Footer>This is a card footer</Card.Footer>
+					</Card>
+					<Spacer h={2} />
+					<Card>
+						<Card.Header>Home Card</Card.Header>
+						<Card.Body>This is a card body</Card.Body>
+						<Card.Footer>This is a card footer</Card.Footer>
+					</Card>
+					<Spacer h={2} />
+					<Card>
+						<Card.Header>Home Card</Card.Header>
+						<Card.Body>This is a card body</Card.Body>
+						<Card.Footer>This is a card footer</Card.Footer>
+					</Card>
+					<Spacer h={2} />
+					<Card>
+						<Card.Header>Home Card</Card.Header>
+						<Card.Body>This is a card body</Card.Body>
+						<Card.Footer>This is a card footer</Card.Footer>
+					</Card>
+				</Page.Body>
 			</Page>
 		</>
 	);
