@@ -25,9 +25,9 @@ const NavigationBar = () => {
 						<NavLink label='Utilities' to='/utilities' hover />
 					</Header.Wrap>
 					<Header.Main>
-						<NavLink label='Contact Us' to='/contact' hover />
-						<Button label='Log In' />
-						<Button label='Sign Up' primary />
+						<NavLink label='Contact Us' to='/contact' />
+						<Button label='Log In' to={'/login'} />
+						<Button label='Sign Up' to={'/register'} primary />
 					</Header.Main>
 				</Header.TopNavigation>
 			</Header>
@@ -51,11 +51,7 @@ const NavigationBar = () => {
 						<Spacer h={1} />
 						<Line horizontal />
 						<MobileNavLink label='Dashboard' />
-						<MobileNavLink
-							label='Settings'
-							currentPath='/settings'
-							to='/settings'
-						/>
+						<MobileNavLink label='Settings' to='/settings' />
 						<MobileNavLink label='New Team'>
 							<Add />
 						</MobileNavLink>

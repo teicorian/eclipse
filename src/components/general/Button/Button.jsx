@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './Button.css';
 
 /**
@@ -12,56 +12,39 @@ const Button = ({
 	size,
 	label,
 	onClick,
+	to,
 	...props
 }) => {
+	if (!size) {
+		size = 'medium';
+	}
 	const mode = primary
 		? 'eclipse-button--primary'
 		: 'eclipse-button--secondary';
 	const isWarning = warning ? 'eclipse-button--warning' : '';
 	const isDeactivated = deactivated ? 'eclipse-button--deactivated' : '';
+
+	const wrapperClassName = [
+		'eclipse-button',
+		`eclipse-button--${size}`,
+		mode,
+		isWarning,
+		isDeactivated,
+	].join(' ');
+
 	return (
-		<button
-			type='button'
-			className={[
-				'eclipse-button',
-				`eclipse-button--${size}`,
-				mode,
-				isWarning,
-				isDeactivated,
-			].join(' ')}
-			onClick={onClick}
-			{...props}
-		>
-			{label}
-		</button>
+		<div className={wrapperClassName} {...props}>
+			{onClick ? (
+				<button type='button' onClick={onClick}>
+					{label}
+				</button>
+			) : (
+				<Link to={to} className={'link'}>
+					{label}
+				</Link>
+			)}
+		</div>
 	);
 };
 
 export default Button;
-
-Button.propTypes = {
-	/**
-	 * Is this the principal call to action on the page?
-	 */
-	primary: PropTypes.bool,
-	warning: PropTypes.bool,
-	deactivated: PropTypes.bool,
-	/**
-	 * How large should the button be?
-	 */
-	size: PropTypes.oneOf(['small', 'medium', 'large']),
-	/**
-	 * Button contents
-	 */
-	label: PropTypes.string.isRequired,
-	/**
-	 * Optional click handler
-	 */
-	onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-	primary: false,
-	size: 'medium',
-	onClick: undefined,
-};

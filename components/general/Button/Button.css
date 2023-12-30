@@ -8,54 +8,44 @@
 	cursor: pointer;
 	display: inline-block;
 	line-height: 1;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
+
 .eclipse-button--primary {
 	color: var(--background);
 	background-color: var(--color);
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
+
 .eclipse-button--primary:hover {
-	color: var(--background);
 	background-color: var(--hover-secondary);
-	transition: all 0.2s ease-in-out;
 }
 .eclipse-button--secondary {
 	color: var(--color);
 	background-color: transparent;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 .eclipse-button--secondary:hover {
-	color: var(--color);
 	background-color: var(--hover);
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-	transition: all 0.2s ease-in-out;
 }
 .eclipse-button--warning {
 	color: var(--background);
 	background-color: var(--button--warning);
 	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 .eclipse-button--warning:hover {
-	color: var(--background);
 	background-color: var(--hover--warning);
-	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
-	transition: all 0.2s ease-in-out;
 }
 .eclipse-button--deactivated {
 	color: var(--color--deactivated);
 	background-color: var(--button--deactivated);
 	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 .eclipse-button--deactivated:hover {
-	color: var(--color--deactivated);
-	background-color: var(--button--deactivated);
-	box-shadow: rgb(225, 225, 225) 0px 0px 0px 1px inset;
 	cursor: not-allowed;
-	transition: all 0.2s ease-in-out;
 }
 
 .eclipse-button--small {
@@ -69,4 +59,9 @@
 .eclipse-button--large {
 	font-size: 1rem;
 	padding: 0.75rem 1.5rem;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
 }

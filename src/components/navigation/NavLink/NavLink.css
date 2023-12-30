@@ -26,18 +26,18 @@
 
 .navlink-wrap-nohover {
 	padding: 0.3rem 0.5rem;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .navlink-wrap-nohover:hover {
 	color: var(--hover-color);
 	cursor: pointer;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .navlink-wrap-hover {
 	padding: 0.3rem 0.5rem;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .navlink-wrap-hover:hover {
@@ -45,7 +45,7 @@
 	background: var(--hover);
 	border-radius: var(--border-radius);
 	cursor: pointer;
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .navlink.sb-hover {

@@ -180,12 +180,12 @@ h1 {
 	align-items: center;
 	justify-content: center;
 	transform: rotate(90deg);
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .page-sidebar-section-collapse .section-collapse-wrap .toggle.collapse {
 	transform: rotate(180deg);
-	transition: all 0.2s ease-in-out;
+	transition: var(--transition);
 }
 
 .page-sidebar-section-collapse .section-collapse-wrap .toggle path {

@@ -44,6 +44,9 @@ Global :root variables, for those independent of themes
 	--hover--warning: #a4242b;
 	--background--warning: #fdebeb;
 	--trim--warning: #fcd3d3;
+
+	--transition: var(--transition);
+	--transition-slow: all 0.5s ease-in-out;
 }
 
 .hidden {

@@ -70,7 +70,6 @@ const ComponentsHome = () => {
 								<MobileNavLink label='Dashboard' />
 								<MobileNavLink
 									label='Settings'
-									currentPath='/settings'
 									to='/settings'
 								/>
 								<MobileNavLink label='New Team'>
