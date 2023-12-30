@@ -23,7 +23,8 @@ Global :root variables, for those independent of themes
 	--background: #ffffff;
 	--background-secondary: #5b5b5b;
 
-	--hover: #f6f6f6;
+	--hover: #ebebeb;
+	--hover-alt: #eaeaea;
 	--hover-color: #313131;
 	--hover-secondary: #313131;
 

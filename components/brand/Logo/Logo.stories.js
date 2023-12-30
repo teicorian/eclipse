@@ -3,21 +3,20 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.Primary = void 0;
+exports.default = exports.Primary = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Logo = _interopRequireDefault(require("./Logo"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var _default = exports["default"] = {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _default = exports.default = {
   title: 'Brand/Logo',
-  component: _Logo["default"],
+  component: _Logo.default,
   parameters: {
     layout: 'centered'
   },
   tags: []
 };
-var Primary = exports.Primary = function Primary(args) {
-  return /*#__PURE__*/_react["default"].createElement(_Logo["default"], args);
-};
+const Primary = args => /*#__PURE__*/_react.default.createElement(_Logo.default, args);
+exports.Primary = Primary;
 Primary.args = {
   src: '/logo.svg',
   w: '2.5rem',

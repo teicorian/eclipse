@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './NavLink.css';
 
-const NavLink = ({ to, label, hover, currentPath, onClick, ...props }) => {
+const NavLink = ({ to, label, hover, onClick, ...props }) => {
+	const currentPath = location.pathname;
 	const isActive = currentPath === to;
 	const hoverStyle = [];
 

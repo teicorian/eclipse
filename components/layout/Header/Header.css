@@ -14,12 +14,6 @@
 	}
 }
 
-.sb-story {
-	padding: 0 0 2rem 0;
-	padding-bottom: 3rem;
-	background-color: #f9f9f9;
-}
-
 .navigation {
 	width: 100%;
 	background-color: var(--background);
@@ -31,10 +25,16 @@
 }
 
 .navigation .container {
+	width: 100%;
+	margin: 0 auto;
 	padding: 0 var(--gutter);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.navigation .container.fixed {
+	max-width: 1200px;
 }
 
 .navigation .container .wrap {

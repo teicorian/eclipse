@@ -11,8 +11,17 @@
 }
 
 .navlink.active {
-	color: var(--color);
 	box-shadow: inset 0px 0px 0px 0px #000, inset 0px -2px 0px 0px #000;
+}
+
+.navlink .link {
+	color: var(--color-secondary);
+	text-decoration: none;
+}
+
+.navlink .link.active {
+	color: var(--color);
+	text-decoration: none;
 }
 
 .navlink-wrap-nohover {

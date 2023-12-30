@@ -4,3 +4,4 @@ export { default as Bars } from './Bars';
 export { default as Close } from './Close';
 export { default as Add } from './Add';
 export { default as OpenLink } from './OpenLink';
+export { default as Chevron } from './Chevron';

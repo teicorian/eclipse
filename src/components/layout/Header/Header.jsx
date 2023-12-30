@@ -18,31 +18,51 @@ const Header = ({ border, children, ...props }) => {
 
 // Primary Navigation
 
-Header.TopNavigation = ({ children }) => {
-	return <div className={'container'}>{children}</div>;
+Header.TopNavigation = ({ fixed, children, ...props }) => {
+	return (
+		<div className={`container ${fixed ? 'fixed' : ''}`} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.Wrap = ({ children }) => {
-	return <div className={'wrap'}>{children}</div>;
+Header.Wrap = ({ children, ...props }) => {
+	return (
+		<div className={'wrap'} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.Brand = ({ children }) => {
-	return <div className={'brand'}>{children}</div>;
+Header.Brand = ({ children, ...props }) => {
+	return (
+		<div className={'brand'} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.Menu = ({ children }) => {
-	return <div className={'menu'}>{children}</div>;
+Header.Menu = ({ children, ...props }) => {
+	return (
+		<div className={'menu'} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.Main = ({ children }) => {
-	return <div className={'main'}>{children}</div>;
+Header.Main = ({ children, ...props }) => {
+	return (
+		<div className={'main'} {...props}>
+			{children}
+		</div>
+	);
 };
 
 // Secondary Navigation
 
-Header.SubNavigation = ({ children }) => {
+Header.SubNavigation = ({ children, ...props }) => {
 	return (
-		<div className={'sub-navigation-container'}>
+		<div className={'sub-navigation-container'} {...props}>
 			<div className={'sub-navigation-main'}>{children}</div>
 		</div>
 	);
@@ -50,15 +70,23 @@ Header.SubNavigation = ({ children }) => {
 
 // Mobile Menu
 
-Header.Mobile = ({ children }) => {
-	return <div className={'mobile-container'}>{children}</div>;
+Header.Mobile = ({ children, ...props }) => {
+	return (
+		<div className={'mobile-container'} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.MobileBrand = ({ children }) => {
-	return <div className={'mobile-brand'}>{children}</div>;
+Header.MobileBrand = ({ children, ...props }) => {
+	return (
+		<div className={'mobile-brand'} {...props}>
+			{children}
+		</div>
+	);
 };
 
-Header.MobileMenu = ({ children }) => {
+Header.MobileMenu = ({ children, ...props }) => {
 	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const toggleMobileMenu = () => {
 		console.log('Toggle menu');
@@ -70,7 +98,10 @@ Header.MobileMenu = ({ children }) => {
 			<div className={'mobile-button'} onClick={toggleMobileMenu}>
 				{isMobileMenuOpen ? <Close size={20} /> : <Bars size={20} />}
 			</div>
-			<div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+			<div
+				className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}
+				{...props}
+			>
 				{children}
 			</div>
 		</>

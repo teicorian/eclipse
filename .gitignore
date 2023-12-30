@@ -31,4 +31,5 @@ storybook-static/
 types/
 components/
 !/src/components/
+!/src/pages/components/
 .yarn/

@@ -40,6 +40,7 @@ html {
 
 /* Set core body defaults */
 body {
+	background: var(--background--deactivated);
 	font-family: var(--font-body);
 	font-size: var(--base-font-size);
 	line-height: var(--font-content-line-height);

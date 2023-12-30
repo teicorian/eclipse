@@ -34,7 +34,7 @@ export { default as User } from './identity/user/User';
 export { default as Page } from './layout/Page/Page';
 export { default as Header } from './layout/Header/Header';
 export { default as Spacer } from './layout/Spacer/Spacer';
-export { defaut as Line } from './layout/Line/Line';
+export { default as Line } from './layout/Line/Line';
 
 // ################################################################## //
 // ################### Navigation Components ######################## //
@@ -42,7 +42,7 @@ export { defaut as Line } from './layout/Line/Line';
 
 export { default as NavLink } from './navigation/NavLink/NavLink';
 export { default as MobileNavLink } from './navigation/MobileNavLink/MobileNavLink';
-export { default as SideBarLink } from './navigation/SideBarLink/SideBarLink';
+export { default as SidebarLink } from './navigation/SidebarLink/SidebarLink';
 
 // ################################################################## //
 // ################### Other Components ############################# //
