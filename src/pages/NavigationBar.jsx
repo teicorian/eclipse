@@ -1,10 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../components/layout/Header/Header';
-import Button from '../components/general/Button/Button';
-import Logo from '../components/brand/Logo/Logo';
-import NavLink from '../components/navigation/NavLink/NavLink';
-import Spacer from '../components/layout/Spacer/Spacer';
+import { Header, Button, Logo, NavLink, Spacer } from 'components';
 import MobileMenu from './MobileMenu';
 
 const NavigationBar = () => {

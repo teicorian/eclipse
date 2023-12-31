@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../../components/layout/Page/Page';
+import { Page } from 'components';
 import SidebarLink from '../../components/navigation/SidebarLink/SidebarLink';
 
 const ComponentsSidebar = () => {

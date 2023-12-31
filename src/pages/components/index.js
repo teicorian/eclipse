@@ -1,19 +1,35 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 import ComponentsHome from './ComponentsHome';
 import HeaderPage from './layout/Header';
 import UserPage from './identity/User';
 
 function Components() {
+	const componentMappings = {
+		// ////////////////////////////////////////////////////////// //
+		// ///// Identity /////////////////////////////////////////// //
+		user: UserPage,
+
+		// ////////////////////////////////////////////////////////// //
+		// ///// Layout ///////////////////////////////////////////// //
+		header: HeaderPage,
+	};
+
+	const DynamicComponents = () => {
+		const { component } = useParams();
+		const ComponentToRender = componentMappings[component];
+
+		if (!ComponentToRender) {
+			// Handle the case when the component is not found
+			return <div>Component not found</div>;
+		}
+
+		return <ComponentToRender />;
+	};
 	return (
 		<Routes>
 			<Route path='' element={<ComponentsHome />} />
-
-			{/* Identity */}
-			<Route path=':section/:component' element={<UserPage />} />
-
-			{/* Layout */}
-			<Route path=':section/:component' element={<HeaderPage />} />
+			<Route path=':section/:component' element={<DynamicComponents />} />
 		</Routes>
 	);
 }
