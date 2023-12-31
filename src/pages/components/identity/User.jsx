@@ -20,6 +20,8 @@ const UserPage = () => {
 	const Snippet = {};
 	Snippet.import = "import { User } from '@teicor/eclipse';";
 
+	const scope = { User };
+
 	const [generalCode, setGeneralCode] = useState(
 		`<User firstName='TJ' lastName='Bredemeyer' to={''} />`
 	);
@@ -32,24 +34,11 @@ const UserPage = () => {
 			<Spacer h={1} />
 			<Card type='deactivated'>
 				<Card.Body>
-					<LiveProvider code={generalCode} language='jsx'>
-						<LiveEditor
-							value={generalCode}
-							onValueChange={(generalCode) =>
-								setGeneralCode(generalCode)
-							}
-							highlight={(generalCode) =>
-								highlight(generalCode, languages.js)
-							}
-							language='jsx'
-							padding={10}
-							style={{
-								fontFamily:
-									'"Fira code", "Fira Mono", monospace',
-								fontSize: 12,
-							}}
-						/>
-						<LiveError />
+					<LiveProvider
+						code={generalCode}
+						language='jsx'
+						scope={scope}
+					>
 						<LivePreview />
 					</LiveProvider>
 				</Card.Body>
