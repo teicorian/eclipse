@@ -118,7 +118,6 @@ Page.SidebarSectionCollapse = ({ label, children, toggled, id, ...props }) => {
 					{label}
 				</div>
 				<div className={`toggle ${isCollapsed ? 'collapse' : ''}`}>
-					{/* Assuming Chevron is a functional component */}
 					<Chevron size={12} />
 				</div>
 			</div>

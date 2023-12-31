@@ -1,13 +1,16 @@
 // NavLink.js
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './NavLink.css';
 
-const NavLink = ({ to, label, hover, onClick, ...props }) => {
-	const currentPath = location.pathname;
-	const isActive = currentPath === to;
+const NavLink = ({ to, label, hover, path, ...props }) => {
+	if (!path) {
+		path = '';
+	}
 	const hoverStyle = [];
+	const isActive = path === to;
+	to = `/${to}`;
 
 	if (hover) {
 		hoverStyle.push('navlink-wrap-hover');

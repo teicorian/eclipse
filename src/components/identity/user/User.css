@@ -3,8 +3,10 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 	cursor: pointer;
+	padding: calc(0.5 * var(--gutter)) 0;
+	max-width: 320px;
+	font-weight: var(--semi-bold);
 }
 
 .user-card .user-card-pfp {
@@ -20,12 +22,16 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	width: 100%;
 }
 
 .user-card .user-card-user .user-card-name {
 	color: var(--color);
 	white-space: nowrap;
+	margin: 0 var(--gutter);
+}
+
+.user-card:hover .user-card-user .user-card-name {
+	color: var(--color-secondary);
 }
 
 .user-card .user-card-user .user-card-email {

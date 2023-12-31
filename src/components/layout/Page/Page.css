@@ -179,12 +179,12 @@ h1 {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	transform: rotate(90deg);
+	transform: rotate(180deg);
 	transition: var(--transition);
 }
 
 .page-sidebar-section-collapse .section-collapse-wrap .toggle.collapse {
-	transform: rotate(180deg);
+	transform: rotate(90deg);
 	transition: var(--transition);
 }
 
@@ -203,15 +203,19 @@ h1 {
 .page-sidebar-section-collapse .section-content {
 	width: 100%;
 	overflow: none;
-	display: none;
-	transition: all 1s ease-in-out;
+	visibility: visible;
+	-webkit-transition: height 200ms ease;
+	transition: height 200ms ease;
 }
 
 .page-sidebar-section-collapse .section-content.collapse {
-	overflow: none;
-	display: flex;
-	flex-direction: column;
-	transition: all 1s ease-in-out;
+	padding: 0;
+	margin: 0;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	-webkit-transition: height 200ms ease;
+	transition: height 200ms ease;
 }
 
 .page-sidebar-section-collapse .section-content .sidebarlink:first-of-type {

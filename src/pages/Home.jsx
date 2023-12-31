@@ -7,7 +7,7 @@ import Logo from '../components/brand/Logo/Logo';
 import NavLink from '../components/navigation/NavLink/NavLink';
 import Spacer from '../components/layout/Spacer/Spacer';
 import MobileNavLink from '../components/navigation/MobileNavLink/MobileNavLink';
-import User from '../components/identity/user/User';
+import User from '../components/identity/User/User';
 import Line from '../components/layout/Line/Line';
 import Card from '../components/surfaces/Card/Card';
 import ComponentsSidebar from './components/ComponentsSidebar';

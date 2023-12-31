@@ -8,8 +8,7 @@
 	"files": [
 		"components",
 		"README.md",
-		"LICENSE",
-		"src/package.json"
+		"LICENSE"
 	],
 	"scripts": {
 		"build": "npm run clean && npm run babel  && yarn publish",
@@ -48,12 +47,14 @@
 		"@babel/preset-react": "^7.23.3",
 		"cross-env": "^7.0.3",
 		"npm-run-path": "^5.2.0",
+		"prismjs": "^1.29.0",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-live": "^4.1.5",
 		"react-router-dom": "^6.19.0",
 		"react-scripts": "^5.0.1",
-		"storybook": "^7.6.5"
+		"react-simple-code-editor": "^0.13.1"
 	},
 	"browserslist": {
 		"production": [

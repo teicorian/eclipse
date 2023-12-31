@@ -1,5 +1,6 @@
 import React from 'react';
-import PFP from '../pfp/PFP';
+import { Link } from 'react-router-dom';
+import PFP from '../PFP/PFP';
 import './User.css';
 
 const User = ({
@@ -11,6 +12,7 @@ const User = ({
 	src,
 	email,
 	onClick,
+	to,
 	...props
 }) => {
 	const order = {};
@@ -27,8 +29,12 @@ const User = ({
 		justify.pfp = 'flex-end';
 		justify.user = 'flex-start';
 	}
+	if (!size) {
+		size = 2;
+	}
+	const name = `${firstName} ${lastName}`;
 	return (
-		<div className={'user-card'} {...props} onClick={onClick}>
+		<Link className={'user-card'} {...props} onClick={onClick} to={to}>
 			<div
 				className={'user-card-pfp'}
 				style={{ order: order.pfp, justifyContent: justify.pfp }}
@@ -44,12 +50,33 @@ const User = ({
 				className={'user-card-user'}
 				style={{ order: order.user, justifyContent: justify.user }}
 			>
-				<div className={'user-card-name'}>
-					{firstName} {lastName}
+				<div
+					className={'user-card-name'}
+					style={{
+						fontSize: `${size * 0.5}rem`,
+						margin: `0 ${size * 0.4}rem`,
+						lineHeight: `${size * 0.5}rem`,
+					}}
+				>
+					{name}
 				</div>
-				<div className={'user-card-email'}>{email}</div>
+				{email ? (
+					<div
+						className={'user-card-email'}
+						style={{
+							fontSize: `${size * 0.35}rem`,
+							margin: `0 ${size * 0.4}rem`,
+							lineHeight: `${size * 0.3}rem`,
+							marginTop: `${size * 0.2}rem`,
+						}}
+					>
+						{email}
+					</div>
+				) : (
+					''
+				)}
 			</div>
-		</div>
+		</Link>
 	);
 };
 

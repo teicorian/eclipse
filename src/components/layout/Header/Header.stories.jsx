@@ -5,7 +5,7 @@ import Logo from '../../brand/Logo/Logo';
 import NavLink from '../../navigation/NavLink/NavLink';
 import Spacer from '../../layout/Spacer/Spacer';
 import MobileNavLink from '../../navigation/MobileNavLink/MobileNavLink';
-import User from '../../identity/user/User';
+import User from '../../identity/User/User';
 import Line from '../../layout/Line/Line';
 import { Add, OpenLink } from '../../icons';
 
