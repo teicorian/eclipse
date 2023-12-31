@@ -11,10 +11,13 @@
 		"LICENSE"
 	],
 	"scripts": {
-		"build": "npm run clean && npm run babel  && yarn publish",
+		"deploy": "npm run clean && npm run babel  && yarn publish",
 		"babel": "babel src/components --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
 		"clean": "rimraf components",
-		"start": "react-scripts start"
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
 	},
 	"bugs": {
 		"url": "https://github.com/teicorian/eclipse/issues/new/choose"
