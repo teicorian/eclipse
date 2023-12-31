@@ -28,8 +28,9 @@ dist
 
 *.code-workspace
 storybook-static/
-types/
-components/
+/types
+/components
 !/src/components/
 !/src/pages/components/
-.yarn/
+/.yarn
+/build
