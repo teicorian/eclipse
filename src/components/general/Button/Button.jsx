@@ -13,6 +13,7 @@ const Button = ({
 	label,
 	onClick,
 	to,
+	type,
 	...props
 }) => {
 	if (!size) {
@@ -35,7 +36,7 @@ const Button = ({
 	return (
 		<div className={wrapperClassName} {...props}>
 			{onClick ? (
-				<button type='button' onClick={onClick}>
+				<button type={type} onClick={onClick}>
 					{label}
 				</button>
 			) : to ? (
@@ -44,7 +45,7 @@ const Button = ({
 				</Link>
 			) : (
 				// Render a regular button if neither onClick nor to is present
-				<button type='button'>{label}</button>
+				<button type={type}>{label}</button>
 			)}
 		</div>
 	);

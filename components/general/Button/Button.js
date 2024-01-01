@@ -21,6 +21,7 @@ const Button = _ref => {
     label,
     onClick,
     to,
+    type,
     ...props
   } = _ref;
   if (!size) {
@@ -33,7 +34,7 @@ const Button = _ref => {
   return /*#__PURE__*/_react.default.createElement("div", _extends({
     className: wrapperClassName
   }, props), onClick ? /*#__PURE__*/_react.default.createElement("button", {
-    type: "button",
+    type: type,
     onClick: onClick
   }, label) : to ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to,
@@ -42,7 +43,7 @@ const Button = _ref => {
   /*#__PURE__*/
   // Render a regular button if neither onClick nor to is present
   _react.default.createElement("button", {
-    type: "button"
+    type: type
   }, label));
 };
 var _default = exports.default = Button;
