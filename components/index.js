@@ -90,8 +90,8 @@ Object.defineProperty(exports, "logger", {
 var _Logo = _interopRequireDefault(require("./brand/Logo/Logo"));
 var _Input = _interopRequireDefault(require("./data_entry/Input/Input"));
 var _Button = _interopRequireDefault(require("./general/Button/Button"));
-var _PFP = _interopRequireDefault(require("./identity/pfp/PFP"));
-var _User = _interopRequireDefault(require("./identity/user/User"));
+var _PFP = _interopRequireDefault(require("./identity/PFP/PFP"));
+var _User = _interopRequireDefault(require("./identity/User/User"));
 var _Page = _interopRequireDefault(require("./layout/Page/Page"));
 var _Header = _interopRequireDefault(require("./layout/Header/Header"));
 var _Spacer = _interopRequireDefault(require("./layout/Spacer/Spacer"));

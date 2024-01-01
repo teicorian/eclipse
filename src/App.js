@@ -5,12 +5,26 @@ import Home from './pages/Home';
 import Components from './pages/components';
 
 function App() {
-	const { page } = useParams();
+	const pageMappings = {
+		components: Components,
+	};
+
+	const DynamicComponents = () => {
+		const { page } = useParams();
+		const PageToRender = pageMappings[page];
+
+		if (!PageToRender) {
+			// Handle the case when the component is not found
+			return <div>Page not found</div>;
+		}
+
+		return <PageToRender />;
+	};
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/components/*' element={<Components />} />
+				<Route path='/:page/*' element={<DynamicComponents />} />
 				<Route path='*' element={<div>Not Found</div>} />
 			</Routes>
 		</BrowserRouter>

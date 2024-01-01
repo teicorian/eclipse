@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Bars, Close } from '../../icons';
-import { logger } from '../../utilities/Logger';
 import './Header.css';
 
 const Header = ({ border, children, ...props }) => {

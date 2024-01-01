@@ -14,12 +14,15 @@ const NavLink = _ref => {
     to,
     label,
     hover,
-    onClick,
+    path,
     ...props
   } = _ref;
-  const currentPath = location.pathname;
-  const isActive = currentPath === to;
+  if (!path) {
+    path = '';
+  }
   const hoverStyle = [];
+  const isActive = path === to;
+  to = "/".concat(to);
   if (hover) {
     hoverStyle.push('navlink-wrap-hover');
   } else {

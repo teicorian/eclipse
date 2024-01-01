@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Close = ({ size, color }) => {
+const Slash = ({ size, color }) => {
 	if (!size) {
 		size = 16;
 	}
@@ -23,4 +23,4 @@ const Close = ({ size, color }) => {
 	);
 };
 
-export default Close;
+export default Slash;

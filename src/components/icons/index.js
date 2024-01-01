@@ -5,3 +5,5 @@ export { default as Close } from './Close';
 export { default as Add } from './Add';
 export { default as OpenLink } from './OpenLink';
 export { default as Chevron } from './Chevron';
+export { default as Copy } from './Copy';
+export { default as Check } from './Check';

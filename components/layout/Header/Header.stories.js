@@ -11,7 +11,7 @@ var _Logo = _interopRequireDefault(require("../../brand/Logo/Logo"));
 var _NavLink = _interopRequireDefault(require("../../navigation/NavLink/NavLink"));
 var _Spacer = _interopRequireDefault(require("../../layout/Spacer/Spacer"));
 var _MobileNavLink = _interopRequireDefault(require("../../navigation/MobileNavLink/MobileNavLink"));
-var _User = _interopRequireDefault(require("../../identity/user/User"));
+var _User = _interopRequireDefault(require("../../identity/User/User"));
 var _Line = _interopRequireDefault(require("../../layout/Line/Line"));
 var _icons = require("../../icons");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

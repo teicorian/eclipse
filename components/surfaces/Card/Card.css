@@ -1,4 +1,5 @@
 @import '../../styles/base.css';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter&family=League+Spartan&display=swap');
 
 .card {
 	width: 100%;
@@ -54,8 +55,7 @@
 	color: var(--color);
 	font-size: var(--font-size-small);
 	width: 100%;
-	padding: calc(1.25 * var(--gutter)) calc(1.5 * var(--gutter))
-		calc(1.25 * var(--gutter)) calc(1.5 * var(--gutter));
+	padding: var(--gutter) var(--gutter);
 	border-top: 1px solid var(--trim);
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
@@ -105,4 +105,98 @@
 	justify-content: space-between;
 	margin: 0;
 	padding: 0;
+}
+
+.card-footer.toggled {
+	border-bottom: 1px solid var(--trim);
+	border-radius: 0;
+}
+
+.card-footer .code-editor {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card-footer .code-editor .code-editor-toggle {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.card-footer .code-editor .code-editor-toggle.toggled .code-editor-chevron {
+	transform: rotate(0deg);
+	transition: var(--transition);
+}
+
+.card-footer .code-editor .code-editor-toggle.toggled .code-editor-chevron {
+	transform: rotate(90deg);
+}
+
+.card-footer .code-editor .code-editor-toggle path {
+	fill: var(--color--deactivated);
+}
+
+.card-footer .code-editor .editor-copy {
+	display: none;
+}
+
+.card-footer .code-editor .editor-copy.toggled {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.card-footer .code-editor .editor-copy path {
+	fill: var(--color--deactivated);
+}
+
+.card-footer .code-editor .editor-copy.copied {
+	color: var(--color--deactivated);
+}
+
+.card-footer .code-editor .editor-copy.copied path {
+	fill: var(--color--deactivated);
+}
+
+.code-container {
+	padding: var(--gutter);
+	width: 100%;
+	height: 0;
+	font-family: 'Fira Code', monospace;
+	overflow-y: hidden;
+	display: none;
+	transition: height 1s linear;
+}
+
+.code-container.toggled {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	height: auto;
+	transition: height 1s linear;
+}
+
+.code-container div {
+	padding: var(--gutter);
+	width: 100%;
+	font-family: 'Fira Code', monospace;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: left;
+	outline: none;
+	border: none;
+}
+
+.code-container textarea {
+	outline: 0;
 }
