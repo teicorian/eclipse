@@ -27,23 +27,21 @@ const Button = _ref => {
   if (!size) {
     size = 'medium';
   }
-  const mode = primary ? 'eclipse-button--primary' : 'eclipse-button--secondary';
-  const isWarning = warning ? 'eclipse-button--warning' : '';
-  const isDeactivated = deactivated ? 'eclipse-button--deactivated' : '';
-  const wrapperClassName = ['eclipse-button', "eclipse-button--".concat(size), mode, isWarning, isDeactivated].join(' ');
-  return /*#__PURE__*/_react.default.createElement("div", _extends({
+  if (!type) {
+    type = 'submit';
+  }
+  if (to) {
+    to = "/".concat(to);
+  }
+  const mode = primary ? 'eclipse-button--primary' : warning ? 'eclipse-button--warning' : deactivated ? 'eclipse-button--deactivated' : 'eclipse-button--secondary';
+  const wrapperClassName = ['eclipse-button', "eclipse-button--".concat(size), mode].join(' ');
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, to ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, _extends({
+    to: to,
     className: wrapperClassName
-  }, props), onClick ? /*#__PURE__*/_react.default.createElement("button", {
+  }, props), label) : /*#__PURE__*/_react.default.createElement("button", _extends({
+    className: wrapperClassName,
     type: type,
     onClick: onClick
-  }, label) : to ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: to,
-    className: 'link'
-  }, label) :
-  /*#__PURE__*/
-  // Render a regular button if neither onClick nor to is present
-  _react.default.createElement("button", {
-    type: type
-  }, label));
+  }, props), label));
 };
 var _default = exports.default = Button;

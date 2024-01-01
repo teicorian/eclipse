@@ -23,24 +23,24 @@ const HeaderPage = () => {
 								<Logo />
 								<Spacer w={1} />
 								<NavLink label='Home' to='' hover />
-								<NavLink label='Guide' to='/guide' hover />
+								<NavLink label='Guide' to='guide' hover />
 								<NavLink
 									label='Components'
-									to='/components'
+									to='components'
 									hover
 								/>
-								<NavLink label='Icons' to='/icons' hover />
-								<NavLink label='Hooks' to='/hooks' hover />
+								<NavLink label='Icons' to='icons' hover />
+								<NavLink label='Hooks' to='hooks' hover />
 								<NavLink
 									label='Utilities'
-									to='/utilities'
+									to='utilities'
 									hover
 								/>
 							</Header.Wrap>
 							<Header.Main>
 								<NavLink
 									label='Contact Us'
-									to='/contact'
+									to='contact'
 									hover
 								/>
 								<Button label='Log In' />
@@ -68,10 +68,7 @@ const HeaderPage = () => {
 								<Spacer h={1} />
 								<Line horizontal />
 								<MobileNavLink label='Dashboard' />
-								<MobileNavLink
-									label='Settings'
-									to='/settings'
-								/>
+								<MobileNavLink label='Settings' to='settings' />
 								<MobileNavLink label='New Team'>
 									<Add />
 								</MobileNavLink>

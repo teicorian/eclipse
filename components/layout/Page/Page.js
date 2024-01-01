@@ -34,8 +34,30 @@ const Page = _ref => {
   if (centered) {
     layout.push('centered');
   }
+  const [padding, setPadding] = (0, _react.useState)(0);
+  (0, _react.useEffect)(() => {
+    const calculatePadding = () => {
+      const navigationElement = document.querySelector('.navigation');
+      const titleElement = document.querySelector('.page-header');
+      const windowHeight = window.innerHeight;
+      if (navigationElement && titleElement) {
+        const navigationHeight = navigationElement.getBoundingClientRect().height;
+        const titleHeight = titleElement.getBoundingClientRect().height;
+        setPadding(windowHeight - navigationHeight - titleHeight);
+      }
+    };
+    calculatePadding();
+    window.addEventListener('resize', calculatePadding);
+    return () => {
+      window.removeEventListener('resize', calculatePadding);
+    };
+  }, []);
   return /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: "page"
+    className: 'page',
+    style: {
+      height: '100% !important',
+      minHeight: "".concat(padding, "px !important")
+    }
   }, props), /*#__PURE__*/_react.default.createElement("div", {
     className: "page-container ".concat(layout ? layout : '')
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -102,9 +124,6 @@ Page.SidebarSectionCollapse = _ref5 => {
     id,
     ...props
   } = _ref5;
-  const {
-    section
-  } = (0, _reactRouterDom.useParams)();
   const [isCollapsed, setIsCollapsed] = (0, _react.useState)(() => {
     const toggleStore = localStorage.getItem("".concat(id, "Toggle"));
     return toggleStore ? JSON.parse(toggleStore)[label] : false;

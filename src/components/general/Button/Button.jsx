@@ -19,35 +19,43 @@ const Button = ({
 	if (!size) {
 		size = 'medium';
 	}
+	if (!type) {
+		type = 'submit';
+	}
+	if (to) {
+		to = `/${to}`;
+	}
 	const mode = primary
 		? 'eclipse-button--primary'
+		: warning
+		? 'eclipse-button--warning'
+		: deactivated
+		? 'eclipse-button--deactivated'
 		: 'eclipse-button--secondary';
-	const isWarning = warning ? 'eclipse-button--warning' : '';
-	const isDeactivated = deactivated ? 'eclipse-button--deactivated' : '';
 
 	const wrapperClassName = [
 		'eclipse-button',
 		`eclipse-button--${size}`,
 		mode,
-		isWarning,
-		isDeactivated,
 	].join(' ');
 
 	return (
-		<div className={wrapperClassName} {...props}>
-			{onClick ? (
-				<button type={type} onClick={onClick}>
-					{label}
-				</button>
-			) : to ? (
-				<Link to={to} className={'link'}>
+		<>
+			{to ? (
+				<Link to={to} className={wrapperClassName} {...props}>
 					{label}
 				</Link>
 			) : (
-				// Render a regular button if neither onClick nor to is present
-				<button type={type}>{label}</button>
+				<button
+					className={wrapperClassName}
+					type={type}
+					onClick={onClick}
+					{...props}
+				>
+					{label}
+				</button>
 			)}
-		</div>
+		</>
 	);
 };
 

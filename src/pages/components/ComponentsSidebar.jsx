@@ -15,21 +15,21 @@ const ComponentsSidebar = () => {
 			<Page.SidebarSection label='Feedback'></Page.SidebarSection>
 			<Page.SidebarSection label='Form'></Page.SidebarSection>
 			<Page.SidebarSectionCollapse label='General'>
-				<SidebarLink label='Button' hover />
+				<SidebarLink
+					label='Button'
+					hover
+					to='components/general/button'
+				/>
 			</Page.SidebarSectionCollapse>
 			<Page.SidebarSectionCollapse label='Identity'>
 				<SidebarLink label='PFP' hover />
-				<SidebarLink
-					label='User'
-					hover
-					to='/components/identity/user'
-				/>
+				<SidebarLink label='User' hover to='components/identity/user' />
 			</Page.SidebarSectionCollapse>
 			<Page.SidebarSectionCollapse label='Layout'>
 				<SidebarLink
 					label='Header'
-					to='/components/layout/header'
 					hover
+					to='components/layout/header'
 				/>
 				<SidebarLink label='Line' hover />
 				<SidebarLink label='Page' hover />

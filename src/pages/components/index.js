@@ -3,9 +3,14 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import ComponentsHome from './ComponentsHome';
 import HeaderPage from './layout/Header';
 import UserPage from './identity/User';
+import ButtonPage from './general/Button';
 
 function Components() {
 	const componentMappings = {
+		// ////////////////////////////////////////////////////////// //
+		// ///// General //////////////////////////////////////////// //
+		button: ButtonPage,
+
 		// ////////////////////////////////////////////////////////// //
 		// ///// Identity /////////////////////////////////////////// //
 		user: UserPage,

@@ -5,12 +5,16 @@ import { Link, useParams } from 'react-router-dom';
 import './NavLink.css';
 
 const NavLink = ({ to, label, hover, path, ...props }) => {
-	if (!path) {
-		path = '';
-	}
 	const hoverStyle = [];
 	const isActive = path === to;
-	to = `/${to}`;
+
+	if (!to) {
+		to = '/';
+	}
+
+	if (to.charAt(0) !== '/') {
+		to = `/${to}`;
+	}
 
 	if (hover) {
 		hoverStyle.push('navlink-wrap-hover');

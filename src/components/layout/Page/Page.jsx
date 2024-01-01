@@ -21,8 +21,40 @@ const Page = ({ fullscreen, fixed, centered, max, children, ...props }) => {
 	if (centered) {
 		layout.push('centered');
 	}
+
+	const [padding, setPadding] = useState(0);
+
+	useEffect(() => {
+		const calculatePadding = () => {
+			const navigationElement = document.querySelector('.navigation');
+			const titleElement = document.querySelector('.page-header');
+			const windowHeight = window.innerHeight;
+
+			if (navigationElement && titleElement) {
+				const navigationHeight =
+					navigationElement.getBoundingClientRect().height;
+				const titleHeight = titleElement.getBoundingClientRect().height;
+				setPadding(windowHeight - navigationHeight - titleHeight);
+			}
+		};
+
+		calculatePadding();
+		window.addEventListener('resize', calculatePadding);
+
+		return () => {
+			window.removeEventListener('resize', calculatePadding);
+		};
+	}, []);
+
 	return (
-		<div className={`page`} {...props}>
+		<div
+			className={'page'}
+			style={{
+				height: '100% !important',
+				minHeight: `${padding}px !important`,
+			}}
+			{...props}
+		>
 			<div className={`page-container ${layout ? layout : ''}`}>
 				<div className={`page-wrapper ${max ? maxWidth : ''}`}>
 					{children}
@@ -87,7 +119,6 @@ Page.SidebarSection = ({ label, children, ...props }) => {
 };
 
 Page.SidebarSectionCollapse = ({ label, children, toggled, id, ...props }) => {
-	const { section } = useParams();
 	const [isCollapsed, setIsCollapsed] = useState(() => {
 		const toggleStore = localStorage.getItem(`${id}Toggle`);
 		return toggleStore ? JSON.parse(toggleStore)[label] : false;

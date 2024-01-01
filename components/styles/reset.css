@@ -12,6 +12,11 @@ Note: This file uses some CSS variables and thus cannot be wholly updated via co
 	box-sizing: border-box;
 }
 
+::selection {
+	background-color: var(--color-amethyst);
+	color: #fff;
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -46,6 +51,7 @@ body {
 	line-height: var(--font-content-line-height);
 	letter-spacing: 0.025rem;
 	text-rendering: optimizeSpeed;
+	min-height: 100vh;
 }
 
 /* A elements that don't have a class get default styles */

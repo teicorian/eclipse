@@ -1,0 +1,74 @@
+.api-h3 {
+	display: inline-block;
+	background: var(--background--deactivated);
+	padding: 0.5rem;
+	font-size: 1.35rem;
+	color: var(--color-amethyst);
+	font-weight: var(--semi-bold);
+	margin: var(--gutter) 0;
+}
+
+.table-container {
+	width: 100%;
+	overflow: auto;
+	margin-bottom: 1rem;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-header {
+	color: var(--color-secondary);
+	background-color: var(--background--deactivated);
+	font-weight: var(--regular);
+	text-align: left;
+	border: 1px solid var(--trim);
+	border-radius: var(--border-radius);
+}
+
+th {
+	font-weight: var(--regular);
+	padding: var(--gutter);
+}
+
+td {
+	color: var(--color-secondary);
+	border-bottom: 1px solid var(--trim);
+	padding: var(--gutter);
+	text-align: left;
+	font-weight: var(--regular);
+	white-space: nowrap;
+}
+
+td:first-child {
+	color: var(--color);
+	font-weight: var(--semi-bold);
+}
+
+.styled {
+	color: var(--color-amethyst);
+}
+
+.col-wrap {
+	width: 100%;
+	white-space: none;
+}
+
+.required {
+	color: var(--color--warning);
+	font-weight: 300;
+}
+
+.table-types {
+	width: calc(100% - calc(var(--gutter) * 2));
+	overflow: auto;
+	padding: var(--gutter);
+	background-color: var(--background--deactivated);
+	margin-bottom: var(--gutter);
+}
+
+.table-types li {
+	padding-left: var(--gutter);
+}

@@ -82,22 +82,56 @@ Header.SubNavigation = _ref7 => {
     children,
     ...props
   } = _ref7;
-  return /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: 'sub-navigation-container'
-  }, props), /*#__PURE__*/_react.default.createElement("div", {
+  const subNavigationRef = (0, _react.useRef)(null);
+  const [isSticky, setIsSticky] = (0, _react.useState)(false);
+  const [scrollPadding, setScrollPadding] = (0, _react.useState)(0);
+  const updateContainerHeight = () => {
+    const subNavigationRect = subNavigationRef.current.getBoundingClientRect();
+    const subNavigationTop = subNavigationRect.top || 0;
+    const subNavigationHeight = subNavigationRect.height || 0;
+    const computedStyle = window.getComputedStyle(subNavigationRef.current);
+    const marginTop = computedStyle.getPropertyValue('margin-top');
+    const marginValue = parseFloat(marginTop);
+    setScrollPadding(subNavigationRect.height + marginValue);
+    setIsSticky(subNavigationTop <= 0);
+    if (window.scrollY - subNavigationHeight - marginValue <= 0) {
+      setIsSticky(false);
+    }
+  };
+  (0, _react.useEffect)(() => {
+    updateContainerHeight();
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', updateContainerHeight);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', updateContainerHeight);
+      }
+    };
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", _extends({
+    className: "sub-navigation-container ".concat(isSticky ? 'sticky' : '')
+  }, props, {
+    ref: subNavigationRef
+  }), /*#__PURE__*/_react.default.createElement("div", {
     className: 'sub-navigation-main'
-  }, children));
+  }, children)), isSticky && /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      marginBottom: "".concat(scrollPadding, "px")
+    }
+  }));
 };
 
 // Mobile Menu
 
 Header.Mobile = _ref8 => {
   let {
+    border,
     children,
     ...props
   } = _ref8;
   return /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: 'mobile-container'
+    className: "mobile-container ".concat(border ? 'border' : '')
   }, props), children);
 };
 Header.MobileBrand = _ref9 => {

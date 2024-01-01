@@ -10,15 +10,16 @@ Global :root variables, for those independent of themes
 	--font-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-body: var(--font-fallback);
 	--base-font-size: 14px;
-	--font-weight: 400;
 	--font-content-line-height: 1.5;
 	--font-size-small: 0.875rem;
 	--font-size-large: 1.25rem;
+	--regular: 400;
 	--bold: 600;
 	--semi-bold: 500;
 
 	--color: #161616;
 	--color-secondary: #a3a3a3;
+	--color-amethyst: #a569f9;
 
 	--background: #ffffff;
 	--background-secondary: #5b5b5b;
@@ -26,7 +27,7 @@ Global :root variables, for those independent of themes
 	--hover: #ebebeb;
 	--hover-alt: #eaeaea;
 	--hover-color: #313131;
-	--hover-secondary: #313131;
+	--hover-secondary: #303030;
 
 	--trim: #e7e7e7;
 	--trim-secondary: #ebebeb;
@@ -35,7 +36,7 @@ Global :root variables, for those independent of themes
 	--gutter: 0.86rem;
 	--border-radius: 0.25rem;
 
-	--color--deactivated: #7c7c7c;
+	--color--deactivated: #707070;
 	--background--deactivated: #f9f9f9;
 	--button--deactivated: #f0f0f0;
 

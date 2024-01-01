@@ -55,7 +55,7 @@
 	color: var(--color);
 	font-size: var(--font-size-small);
 	width: 100%;
-	padding: var(--gutter) var(--gutter);
+	padding: var(--gutter);
 	border-top: 1px solid var(--trim);
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
@@ -75,6 +75,11 @@
 }
 
 .card.deactivated .card-footer {
+	color: var(--color--deactivated);
+	background-color: var(--background--deactivated);
+}
+
+.card.code .card-footer {
 	color: var(--color--deactivated);
 	background-color: var(--background--deactivated);
 }

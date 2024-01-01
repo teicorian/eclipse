@@ -6,8 +6,16 @@ import PropTypes from 'prop-types';
 import './MobileNavLink.css';
 
 const MobileNavLink = ({ to, label, children, ...props }) => {
+	if (!to) {
+		to = '/';
+	}
+
+	if (to.charAt(0) !== '/') {
+		to = `/${to}`;
+	}
+
 	return (
-		<Link className={'mobile-navlink'} to={to}>
+		<Link to={to} className={'mobile-navlink'}>
 			<div className={'label'}>{label}</div>
 			<div className={'action'}>{children}</div>
 		</Link>

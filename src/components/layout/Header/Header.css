@@ -3,21 +3,22 @@
 @media only screen and (max-width: 768px) {
 	.navigation .container {
 		height: 0px !important;
-		visibility: hidden;
+		width: 0px !important;
+		overflow: hidden !important;
 	}
 }
 
 @media only screen and (min-width: 769px) {
 	.navigation .mobile-container {
 		height: 0px !important;
-		visibility: hidden;
+		width: 0px !important;
+		overflow: hidden !important;
 	}
 }
 
 .navigation {
 	width: 100%;
 	background-color: var(--background);
-	border-bottom: 1px solid var(--trim);
 	display: flex;
 	flex-direction: column;
 	align-items: space-between;
@@ -31,6 +32,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	z-index: 1001;
 }
 
 .navigation .container.fixed {
@@ -64,13 +66,22 @@
 }
 
 .navigation .sub-navigation-container {
+	width: 100%;
 	padding: 0 var(--gutter);
 	margin-top: calc(-1 * var(--gutter));
-	width: 100%;
+	background: var(--background);
+	border-bottom: 1px solid var(--trim);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
+	z-index: 1000;
+}
+
+.sub-navigation-container.sticky {
+	position: fixed;
+	top: var(--gutter);
+	z-index: 1001;
 }
 
 .navigation .sub-navigation-container .sub-navigation-main {
@@ -79,7 +90,6 @@
 	align-items: center;
 	justify-content: flex-start;
 	overflow-x: scroll;
-	overflow-y: visible;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
@@ -94,6 +104,10 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.navigation .mobile-container.border {
+	border-bottom: 1px solid var(--trim);
 }
 
 .navigation .mobile-container .mobile-brand {
@@ -120,6 +134,7 @@
 
 .navigation .mobile-container .mobile-menu {
 	display: none;
+	z-index: 9999;
 }
 
 .navigation .mobile-container .mobile-menu.active {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Bars, Close } from '../../icons';
 import './Header.css';
 
@@ -60,18 +60,67 @@ Header.Main = ({ children, ...props }) => {
 // Secondary Navigation
 
 Header.SubNavigation = ({ children, ...props }) => {
+	const subNavigationRef = useRef(null);
+	const [isSticky, setIsSticky] = useState(false);
+	const [scrollPadding, setScrollPadding] = useState(0);
+
+	const updateContainerHeight = () => {
+		const subNavigationRect =
+			subNavigationRef.current.getBoundingClientRect();
+		const subNavigationTop = subNavigationRect.top || 0;
+		const subNavigationHeight = subNavigationRect.height || 0;
+		const computedStyle = window.getComputedStyle(subNavigationRef.current);
+		const marginTop = computedStyle.getPropertyValue('margin-top');
+		const marginValue = parseFloat(marginTop);
+
+		setScrollPadding(subNavigationRect.height + marginValue);
+
+		setIsSticky(subNavigationTop <= 0);
+		if (window.scrollY - subNavigationHeight - marginValue <= 0) {
+			setIsSticky(false);
+		}
+	};
+
+	useEffect(() => {
+		updateContainerHeight();
+
+		if (typeof window !== 'undefined') {
+			window.addEventListener('scroll', updateContainerHeight);
+		}
+
+		return () => {
+			if (typeof window !== 'undefined') {
+				window.removeEventListener('scroll', updateContainerHeight);
+			}
+		};
+	}, []);
+
 	return (
-		<div className={'sub-navigation-container'} {...props}>
-			<div className={'sub-navigation-main'}>{children}</div>
-		</div>
+		<>
+			<div
+				className={`sub-navigation-container ${
+					isSticky ? 'sticky' : ''
+				}`}
+				{...props}
+				ref={subNavigationRef}
+			>
+				<div className={'sub-navigation-main'}>{children}</div>
+			</div>
+			{isSticky && (
+				<div style={{ marginBottom: `${scrollPadding}px` }}></div>
+			)}
+		</>
 	);
 };
 
 // Mobile Menu
 
-Header.Mobile = ({ children, ...props }) => {
+Header.Mobile = ({ border, children, ...props }) => {
 	return (
-		<div className={'mobile-container'} {...props}>
+		<div
+			className={`mobile-container ${border ? 'border' : ''}`}
+			{...props}
+		>
 			{children}
 		</div>
 	);

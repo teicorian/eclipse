@@ -17,12 +17,14 @@ const NavLink = _ref => {
     path,
     ...props
   } = _ref;
-  if (!path) {
-    path = '';
-  }
   const hoverStyle = [];
   const isActive = path === to;
-  to = "/".concat(to);
+  if (!to) {
+    to = '/';
+  }
+  if (to.charAt(0) !== '/') {
+    to = "/".concat(to);
+  }
   if (hover) {
     hoverStyle.push('navlink-wrap-hover');
   } else {

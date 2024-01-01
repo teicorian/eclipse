@@ -28,6 +28,7 @@ const Chevron = ({ size, left, right, up, down, color }) => {
 			width={size}
 			viewBox='0 0 512 512'
 			transform={`rotate(${rotate})`}
+			style={{ display: 'block' }}
 		>
 			<path
 				opacity='1'
