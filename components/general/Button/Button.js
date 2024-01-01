@@ -35,9 +35,14 @@ const Button = _ref => {
   }, props), onClick ? /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     onClick: onClick
-  }, label) : /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, label) : to ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to,
     className: 'link'
+  }, label) :
+  /*#__PURE__*/
+  // Render a regular button if neither onClick nor to is present
+  _react.default.createElement("button", {
+    type: "button"
   }, label));
 };
 var _default = exports.default = Button;

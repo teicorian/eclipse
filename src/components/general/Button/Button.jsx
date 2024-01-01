@@ -38,10 +38,13 @@ const Button = ({
 				<button type='button' onClick={onClick}>
 					{label}
 				</button>
-			) : (
+			) : to ? (
 				<Link to={to} className={'link'}>
 					{label}
 				</Link>
+			) : (
+				// Render a regular button if neither onClick nor to is present
+				<button type='button'>{label}</button>
 			)}
 		</div>
 	);

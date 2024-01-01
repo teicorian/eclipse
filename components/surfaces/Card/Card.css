@@ -157,14 +157,6 @@
 	fill: var(--color--deactivated);
 }
 
-.card-footer .code-editor .editor-copy.copied {
-	color: var(--color--deactivated);
-}
-
-.card-footer .code-editor .editor-copy.copied path {
-	fill: var(--color--deactivated);
-}
-
 .code-container {
 	padding: var(--gutter);
 	width: 100%;
