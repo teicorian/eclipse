@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _reactRouterDom = require("react-router-dom");
 var _icons = require("../../icons");
 require("./Page.css");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
@@ -96,11 +95,32 @@ Page.Sidebar = _ref3 => {
     children,
     ...props
   } = _ref3;
-  return /*#__PURE__*/_react.default.createElement("div", _extends({
+  const [sidebarOpen, setSidebarOpen] = (0, _react.useState)(false);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+  const title = {};
+  if (id) {
+    title.id = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase();
+  }
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", _extends({
     className: 'page-sidebar'
   }, props), _react.default.Children.map(children, child => /*#__PURE__*/_react.default.cloneElement(child, {
     id
-  })));
+  }))), title.id ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "mobile-sidebar-button ".concat(sidebarOpen ? 'toggled' : ''),
+    onClick: toggleSidebar
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: 'mobile-sidebar-button-icon'
+  }, sidebarOpen ? /*#__PURE__*/_react.default.createElement(_icons.Chevron, {
+    down: true
+  }) : /*#__PURE__*/_react.default.createElement(_icons.Chevron, {
+    right: true
+  })), /*#__PURE__*/_react.default.createElement("h3", null, title.id)), /*#__PURE__*/_react.default.createElement("div", _extends({
+    className: "mobile-sidebar ".concat(sidebarOpen ? 'toggled' : '')
+  }, props), _react.default.Children.map(children, child => /*#__PURE__*/_react.default.cloneElement(child, {
+    id
+  })))) : '');
 };
 Page.SidebarSection = _ref4 => {
   let {

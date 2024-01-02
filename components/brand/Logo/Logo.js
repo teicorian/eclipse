@@ -20,6 +20,9 @@ const Logo = _ref => {
     to,
     ...props
   } = _ref;
+  if (!to) {
+    to = '/';
+  }
   const source = src ? src : '/logo.svg';
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to

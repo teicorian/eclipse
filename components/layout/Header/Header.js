@@ -17,8 +17,8 @@ const Header = _ref => {
     ...props
   } = _ref;
   const style = [];
-  if (!border) {
-    style.border = 'none';
+  if (border) {
+    style.borderBottomWidth = '1px';
   }
   return /*#__PURE__*/_react.default.createElement("div", _extends({
     className: 'navigation',
@@ -79,6 +79,7 @@ Header.Main = _ref6 => {
 
 Header.SubNavigation = _ref7 => {
   let {
+    fixed,
     children,
     ...props
   } = _ref7;
@@ -110,11 +111,11 @@ Header.SubNavigation = _ref7 => {
     };
   }, []);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: "sub-navigation-container ".concat(isSticky ? 'sticky' : '')
+    className: "sub-navigation-container ".concat(isSticky ? 'sticky' : '', " ").concat(fixed ? 'fixed' : '')
   }, props, {
     ref: subNavigationRef
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: 'sub-navigation-main'
+    className: "sub-navigation-main ".concat(fixed ? 'fixed' : '')
   }, children)), isSticky && /*#__PURE__*/_react.default.createElement("div", {
     style: {
       marginBottom: "".concat(scrollPadding, "px")
@@ -126,12 +127,11 @@ Header.SubNavigation = _ref7 => {
 
 Header.Mobile = _ref8 => {
   let {
-    border,
     children,
     ...props
   } = _ref8;
   return /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: "mobile-container ".concat(border ? 'border' : '')
+    className: 'mobile-container'
   }, props), children);
 };
 Header.MobileBrand = _ref9 => {
@@ -148,20 +148,29 @@ Header.MobileMenu = _ref10 => {
     children,
     ...props
   } = _ref10;
-  const [isMobileMenuOpen, setMobileMenuOpen] = (0, _react.useState)(false);
+  const [scrollPadding, setScrollPadding] = (0, _react.useState)(0);
+  const [menuOpen, setMenuOpen] = (0, _react.useState)(false);
   const toggleMobileMenu = () => {
-    console.log('Toggle menu');
-    setMobileMenuOpen(!isMobileMenuOpen);
+    setMenuOpen(!menuOpen);
+    const navigationElement = document.querySelector('.navigation');
+    if (navigationElement) {
+      const navigationHeight = navigationElement.offsetHeight;
+      const windowHeight = window.innerHeight;
+      setScrollPadding(windowHeight - navigationHeight);
+    }
   };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: 'mobile-button',
+    className: "mobile-button ".concat(menuOpen ? 'toggled' : ''),
     onClick: toggleMobileMenu
-  }, isMobileMenuOpen ? /*#__PURE__*/_react.default.createElement(_icons.Close, {
+  }, menuOpen ? /*#__PURE__*/_react.default.createElement(_icons.Close, {
     size: 20
   }) : /*#__PURE__*/_react.default.createElement(_icons.Bars, {
     size: 20
   })), /*#__PURE__*/_react.default.createElement("div", _extends({
-    className: "mobile-menu ".concat(isMobileMenuOpen ? 'active' : '')
+    className: "mobile-menu ".concat(menuOpen ? 'toggled' : ''),
+    style: {
+      height: "".concat(scrollPadding, "px")
+    }
   }, props, {
     onClick: toggleMobileMenu
   }), children));
