@@ -9,7 +9,6 @@ const ComponentsLayout = ({ children }) => {
 	const { section, component } = useParams();
 	return (
 		<Layout>
-			<Page.Header fixed></Page.Header>
 			<Page fixed>
 				<ComponentsSidebar />
 				<Page.Body>
