@@ -33,3 +33,4 @@ storybook-static/
 !/src/pages/components/
 /.yarn
 /build
+.ds_store
