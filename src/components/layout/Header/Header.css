@@ -73,7 +73,6 @@
 	padding: 0 var(--gutter);
 	margin-top: calc(-1 * var(--gutter));
 	background: var(--background);
-	border-bottom: 1px solid var(--trim);
 	display: flex;
 	flex-direction: row;
 	align-items: center;

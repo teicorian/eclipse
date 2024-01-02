@@ -39,7 +39,7 @@ const NavigationBar = () => {
 						<Button label='Contact' to={'contact'} />
 					</Header.Main>
 				</Header.TopNavigation>
-				<Header.SubNavigation fixed>
+				{/* <Header.SubNavigation fixed>
 					{wrap.map((link) => (
 						<NavLink
 							key={link.label}
@@ -85,7 +85,7 @@ const NavigationBar = () => {
 							hover
 						/>
 					))}
-				</Header.SubNavigation>
+				</Header.SubNavigation> */}
 			</Header>
 		</>
 	);
