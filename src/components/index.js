@@ -24,8 +24,8 @@ export { default as Button } from './general/Button/Button';
 // ################### Identity Components ########################## //
 // ################################################################## //
 
-export { default as PFP } from './identity/PFP/PFP';
-export { default as User } from './identity/User/User';
+export { default as PFP } from './identity/pfp/PFP';
+export { default as User } from './identity/user/User';
 
 // ################################################################## //
 // ################### Layout Components ############################ //

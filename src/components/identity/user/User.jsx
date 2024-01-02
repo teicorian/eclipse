@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PFP from '../PFP/PFP';
+import PFP from '../pfp/PFP';
 import './User.css';
 
 const User = ({
