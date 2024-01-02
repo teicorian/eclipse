@@ -7,9 +7,7 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism.css';
 import '../../code-theme.css';
 import ComponentsLayout from '../ComponentsLayout';
-import Card from '../../../components/surfaces/Card/Card';
-import Spacer from '../../../components/layout/Spacer/Spacer';
-import User from '../../../components/identity/User/User';
+import { User, Card, Spacer } from '../../../components';
 
 const UserPage = () => {
 	const user = {

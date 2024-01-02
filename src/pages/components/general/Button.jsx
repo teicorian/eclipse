@@ -6,9 +6,7 @@ import 'prismjs/components/prism-jsx';
 import '../../code-theme.css';
 import '../../table.css';
 import ComponentsLayout from '../ComponentsLayout';
-import Card from '../../../components/surfaces/Card/Card';
-import Spacer from '../../../components/layout/Spacer/Spacer';
-import Button from '../../../components/general/Button/Button';
+import { Card, Spacer, Button } from '../../../components';
 import CodeCard from '../../helpers/card.code';
 
 const ButtonPage = () => {

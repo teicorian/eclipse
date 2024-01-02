@@ -1,17 +1,19 @@
 import React from 'react';
-import ComponentsLayout from '../ComponentsLayout';
-import Header from '../../../components/layout/Header/Header';
-import Button from '../../../components/general/Button/Button';
-import Logo from '../../../components/brand/Logo/Logo';
-import NavLink from '../../../components/navigation/NavLink/NavLink';
-import Spacer from '../../../components/layout/Spacer/Spacer';
-import MobileNavLink from '../../../components/navigation/MobileNavLink/MobileNavLink';
-import User from '../../../components/identity/User/User';
-import Line from '../../../components/layout/Line/Line';
-import Card from '../../../components/surfaces/Card/Card';
-import { Add, OpenLink } from '../../../components/icons';
+import ComponentsLayout from './ComponentsLayout';
+import {
+	User,
+	Header,
+	Button,
+	Logo,
+	NavLink,
+	Spacer,
+	MobileNavLink,
+	Line,
+	Card,
+} from '../../components';
+import { Add, OpenLink } from '../../components/icons';
 
-const HeaderPage = () => {
+const ComponentsHome = () => {
 	return (
 		<ComponentsLayout>
 			<Card type='deactivated'>
@@ -92,4 +94,4 @@ const HeaderPage = () => {
 	);
 };
 
-export default HeaderPage;
+export default ComponentsHome;
