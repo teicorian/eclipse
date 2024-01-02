@@ -4,8 +4,8 @@ import './Header.css';
 
 const Header = ({ border, children, ...props }) => {
 	const style = [];
-	if (!border) {
-		style.border = 'none';
+	if (border) {
+		style.borderBottomWidth = '1px';
 	}
 
 	return (
@@ -59,7 +59,7 @@ Header.Main = ({ children, ...props }) => {
 
 // Secondary Navigation
 
-Header.SubNavigation = ({ children, ...props }) => {
+Header.SubNavigation = ({ fixed, children, ...props }) => {
 	const subNavigationRef = useRef(null);
 	const [isSticky, setIsSticky] = useState(false);
 	const [scrollPadding, setScrollPadding] = useState(0);
@@ -100,11 +100,13 @@ Header.SubNavigation = ({ children, ...props }) => {
 			<div
 				className={`sub-navigation-container ${
 					isSticky ? 'sticky' : ''
-				}`}
+				} ${fixed ? 'fixed' : ''}`}
 				{...props}
 				ref={subNavigationRef}
 			>
-				<div className={'sub-navigation-main'}>{children}</div>
+				<div className={`sub-navigation-main ${fixed ? 'fixed' : ''}`}>
+					{children}
+				</div>
 			</div>
 			{isSticky && (
 				<div style={{ marginBottom: `${scrollPadding}px` }}></div>
@@ -115,12 +117,9 @@ Header.SubNavigation = ({ children, ...props }) => {
 
 // Mobile Menu
 
-Header.Mobile = ({ border, children, ...props }) => {
+Header.Mobile = ({ children, ...props }) => {
 	return (
-		<div
-			className={`mobile-container ${border ? 'border' : ''}`}
-			{...props}
-		>
+		<div className={'mobile-container'} {...props}>
 			{children}
 		</div>
 	);

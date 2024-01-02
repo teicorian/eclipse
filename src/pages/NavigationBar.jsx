@@ -17,8 +17,8 @@ const NavigationBar = () => {
 
 	return (
 		<>
-			<MobileMenu />
 			<Header border>
+				<MobileMenu />
 				<Header.TopNavigation fixed>
 					<Header.Wrap>
 						<Logo />
@@ -34,12 +34,39 @@ const NavigationBar = () => {
 						))}
 					</Header.Wrap>
 					<Header.Main>
-						<NavLink label='Contact Us' to='contact' />
-						<Button label='Log In' to={'login'} />
-						<Button label='Sign Up' to={'register'} primary />
+						<NavLink label='Changelog' to='changelog' />
+						<NavLink label='Help' to='help' />
+						<Button label='Contact' to={'contact'} />
 					</Header.Main>
 				</Header.TopNavigation>
-				<Header.SubNavigation>
+				<Header.SubNavigation fixed>
+					{wrap.map((link) => (
+						<NavLink
+							key={link.label}
+							label={link.label}
+							path={page}
+							to={link.to}
+							hover
+						/>
+					))}
+					{wrap.map((link) => (
+						<NavLink
+							key={link.label}
+							label={link.label}
+							path={page}
+							to={link.to}
+							hover
+						/>
+					))}
+					{wrap.map((link) => (
+						<NavLink
+							key={link.label}
+							label={link.label}
+							path={page}
+							to={link.to}
+							hover
+						/>
+					))}
 					{wrap.map((link) => (
 						<NavLink
 							key={link.label}

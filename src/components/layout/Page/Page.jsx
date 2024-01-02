@@ -1,8 +1,7 @@
 // NavLink.js
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Chevron } from '../../icons';
+import { Chevron, Bars, Close } from '../../icons';
 import './Page.css';
 
 const Page = ({ fullscreen, fixed, centered, max, children, ...props }) => {
@@ -100,12 +99,51 @@ Page.Header = ({
 };
 
 Page.Sidebar = ({ id, children, ...props }) => {
+	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const toggleSidebar = () => {
+		setSidebarOpen(!sidebarOpen);
+	};
+
+	const title = {};
+	if (id) {
+		title.id = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase();
+	}
+
 	return (
-		<div className={'page-sidebar'} {...props}>
-			{React.Children.map(children, (child) =>
-				React.cloneElement(child, { id })
+		<>
+			<div className={'page-sidebar'} {...props}>
+				{React.Children.map(children, (child) =>
+					React.cloneElement(child, { id })
+				)}
+			</div>
+			{title.id ? (
+				<>
+					<div
+						className={`mobile-sidebar-button ${
+							sidebarOpen ? 'toggled' : ''
+						}`}
+						onClick={toggleSidebar}
+					>
+						<div className={'mobile-sidebar-button-icon'}>
+							{sidebarOpen ? <Chevron down /> : <Chevron right />}
+						</div>
+						<h3>{title.id}</h3>
+					</div>
+					<div
+						className={`mobile-sidebar ${
+							sidebarOpen ? 'toggled' : ''
+						}`}
+						{...props}
+					>
+						{React.Children.map(children, (child) =>
+							React.cloneElement(child, { id })
+						)}
+					</div>
+				</>
+			) : (
+				''
 			)}
-		</div>
+		</>
 	);
 };
 
