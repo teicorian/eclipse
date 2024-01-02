@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 import './components/styles/base.css';
 import './pages/code-theme.css';
 import Home from './pages/Home';
-import Components from './pages/components';
+import Components from './pages/production_components';
 
 function App() {
 	const pageMappings = {
