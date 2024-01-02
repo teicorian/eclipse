@@ -149,6 +149,7 @@ Header.MobileMenu = ({ children, ...props }) => {
 			<div
 				className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}
 				{...props}
+				onClick={toggleMobileMenu}
 			>
 				{children}
 			</div>

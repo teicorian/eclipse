@@ -162,6 +162,8 @@ Header.MobileMenu = _ref10 => {
     size: 20
   })), /*#__PURE__*/_react.default.createElement("div", _extends({
     className: "mobile-menu ".concat(isMobileMenuOpen ? 'active' : '')
-  }, props), children));
+  }, props, {
+    onClick: toggleMobileMenu
+  }), children));
 };
 var _default = exports.default = Header;
