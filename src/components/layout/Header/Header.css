@@ -137,7 +137,7 @@
 	z-index: 9999;
 }
 
-.navigation .mobile-container .mobile-menu.active {
+.navigation .mobile-container .mobile-menu.toggled {
 	position: absolute;
 	top: calc(2.5rem + calc(2 * var(--gutter)));
 	right: 0;
@@ -151,7 +151,7 @@
 	flex-direction: flex-start;
 }
 
-.navigation .mobile-container .mobile-menu.active button {
+.navigation .mobile-container .mobile-menu button {
 	width: 100%;
 }
 

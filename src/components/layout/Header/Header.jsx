@@ -135,19 +135,29 @@ Header.MobileBrand = ({ children, ...props }) => {
 };
 
 Header.MobileMenu = ({ children, ...props }) => {
-	const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [scrollPadding, setScrollPadding] = useState(0);
+	const [menuOpen, setMenuOpen] = useState(false);
 	const toggleMobileMenu = () => {
-		console.log('Toggle menu');
-		setMobileMenuOpen(!isMobileMenuOpen);
+		setMenuOpen(!menuOpen);
+		const navigationElement = document.querySelector('.navigation');
+		if (navigationElement) {
+			const navigationHeight = navigationElement.offsetHeight;
+			const windowHeight = window.innerHeight;
+			setScrollPadding(windowHeight - navigationHeight);
+		}
 	};
 
 	return (
 		<>
-			<div className={'mobile-button'} onClick={toggleMobileMenu}>
-				{isMobileMenuOpen ? <Close size={20} /> : <Bars size={20} />}
+			<div
+				className={`mobile-button ${menuOpen ? 'toggled' : ''}`}
+				onClick={toggleMobileMenu}
+			>
+				{menuOpen ? <Close size={20} /> : <Bars size={20} />}
 			</div>
 			<div
-				className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}
+				className={`mobile-menu ${menuOpen ? 'toggled' : ''}`}
+				style={{ height: `${scrollPadding}px` }}
 				{...props}
 				onClick={toggleMobileMenu}
 			>
