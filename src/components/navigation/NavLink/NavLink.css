@@ -1,0 +1,56 @@
+@import '../../styles/base.css';
+
+.navlink {
+	color: var(--color-secondary);
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: var(--gutter) 0;
+}
+
+.navlink.active {
+	box-shadow: inset 0px 0px 0px 0px #000, inset 0px -2px 0px 0px #000;
+}
+
+.navlink .link {
+	color: var(--color-secondary);
+	text-decoration: none;
+}
+
+.navlink .link.active {
+	color: var(--color);
+	text-decoration: none;
+}
+
+.navlink-wrap-nohover {
+	padding: 0.3rem 0.5rem;
+	transition: var(--transition);
+}
+
+.navlink-wrap-nohover:hover {
+	color: var(--hover-color);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.navlink-wrap-hover {
+	padding: 0.3rem 0.5rem;
+	transition: var(--transition);
+}
+
+.navlink-wrap-hover:hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.navlink.sb-hover {
+	color: var(--hover-color);
+	background: var(--hover);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}

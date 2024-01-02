@@ -1,0 +1,25 @@
+@import '../../styles/base.css';
+
+.sidebarlink {
+	color: var(--color-secondary);
+	text-decoration: none;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	padding: calc(0.5 * var(--gutter)) var(--gutter);
+	transition: var(--transition);
+}
+
+.sidebarlink:hover {
+	color: var(--hover-color);
+	background: var(--hover-alt);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.sidebarlink.active {
+	color: var(--hover-color);
+}

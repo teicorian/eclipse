@@ -1,0 +1,74 @@
+@import '../../styles/base.css';
+
+.eclipse-button {
+	font-family: var(--font-family);
+	font-size: var(--base-font-size);
+	border: 0;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	transition: var(--transition);
+}
+
+.eclipse-button--primary {
+	color: var(--background);
+	background-color: var(--color);
+	transition: var(--transition);
+}
+
+.eclipse-button--primary:hover {
+	background-color: var(--hover-secondary);
+}
+.eclipse-button--secondary {
+	color: var(--color-secondary);
+	background-color: transparent;
+	border: 1px solid var(--trim);
+	transition: var(--transition);
+}
+.eclipse-button--secondary:hover {
+	color: var(--color);
+	background-color: var(--hover);
+}
+.eclipse-button--deactivated {
+	color: var(--color--deactivated);
+	background-color: var(--button--deactivated);
+	border: 1px solid var(--trim);
+	transition: var(--transition);
+}
+.eclipse-button--deactivated:hover {
+	cursor: not-allowed;
+	color: var(--color--deactivated);
+	background-color: var(--button--deactivated);
+}
+.eclipse-button--warning {
+	color: var(--background);
+	background-color: var(--button--warning);
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset;
+	transition: var(--transition);
+}
+.eclipse-button--warning:hover {
+	color: var(--background);
+	background-color: var(--hover--warning);
+}
+
+.eclipse-button--small {
+	font-size: 0.75rem;
+	padding: 0.63rem 1rem;
+}
+.eclipse-button--medium {
+	font-size: 0.88rem;
+	padding: 0.69rem 1.25rem;
+}
+.eclipse-button--large {
+	font-size: 1rem;
+	padding: 0.75rem 1.5rem;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}

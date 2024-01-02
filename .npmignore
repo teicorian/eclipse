@@ -24,13 +24,12 @@ hs_err_pid*
 replay_pid*
 node_modules
 dist
+#components
 
 *.code-workspace
 storybook-static/
-/types
-/components
-!/src/components/
-!/src/pages/components/
-/.yarn
-/build
-.ds_store
+types/
+components/
+.storybook/
+public/
+src/
