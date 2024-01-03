@@ -1,0 +1,38 @@
+name: Publish to npm nightly
+
+on:
+    schedule:
+        - cron: '0 0 * * *' # Run every night at midnight
+    push:
+        branches:
+            - nightly
+    pull_request:
+        branches:
+            - nightly
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '18'
+                  ref: nightly
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Build package
+              run: yarn build-package
+
+            - name: Publish to npm nightly
+              run: |
+                  npm version prerelease --preid=nightly
+                  npm publish --tag=nightly
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
