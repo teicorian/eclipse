@@ -34,7 +34,7 @@ const Input = ({
 				placeholder={placeholder}
 				autoComplete={autoComplete}
 				value={value}
-				required={required ? 'true' : 'false'}
+				required={required ? true : undefined}
 				minLength={minLength}
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
