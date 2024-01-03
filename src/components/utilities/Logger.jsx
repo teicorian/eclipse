@@ -6,7 +6,7 @@ const LogLevel = {
 };
 
 const logger = (level, ...messages) => {
-	if (process.env.NODE_ENV === 'development') {
+	if (process.env.NODE_ENV === 'development' || level !== LogLevel.DEBUG) {
 		console.log(`[${level.toUpperCase()}]`, ...messages);
 	}
 };
