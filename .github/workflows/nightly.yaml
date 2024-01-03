@@ -36,9 +36,3 @@ jobs:
                   npm publish --tag=nightly
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Create GitHub Release
-              uses: softprops/action-gh-release@v1
-              with:
-                  files: ./components
-                  token: ${{ secrets.GITHUB_TOKEN }}
