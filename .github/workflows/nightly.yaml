@@ -1,8 +1,6 @@
 name: Publish to npm nightly
 
 on:
-    schedule:
-        - cron: '0 0 * * *'
     push:
         branches:
             - nightly
@@ -38,3 +36,9 @@ jobs:
                   npm publish --tag=nightly
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: ./components
+                  token: ${{ secrets.GITHUB_TOKEN }}
