@@ -1,57 +1,43 @@
 import React, { useState } from 'react';
 import '../../table.css';
 import ComponentsLayout from '../ComponentsLayout';
-import { Card, Spacer, Button } from '../../../components';
+import { Card, Spacer, Input } from '../../../components';
 import CodeCard from '../../helpers/card.code';
 
-const ButtonPage = () => {
-	const primary = "<Button label='Button' primary />";
-	const secondary = "<Button label='Button' />";
-	const link = "<Button label='Button' to={''} />";
-	const small = "<Button label='Button' size='small' />";
-	const large = "<Button label='Button' size='large' />";
-	const deactivated = "<Button label='Button' deactivated />";
-	const warning = "<Button label='Button' warning />";
+const InputPage = () => {
+	const handleClick = () => {
+		console.log('Button clicked!');
+	};
+	const [debugPassword, setDebugPassword] = useState('');
+	const handleChange = (event) => {
+		const newPassword = event.target.value;
+		setDebugPassword(newPassword);
+	};
+	const general = "<Input placeholder='General input...' />";
+	const password =
+		"<Input type='password' placeholder='Password input...' />";
 
 	return (
 		<ComponentsLayout>
 			<p>A button can be a form submission or a link to a new page.</p>
 			<Spacer h={2} />
-			<h2>Primary</h2>
+			<h2>General</h2>
 			<Spacer h={1} />
-			A button with primary importance.
+			A general input field.
 			<Spacer h={1} />
-			<CodeCard code={primary} scope={{ Button }} language='jsx' />
-			<h2>Secondary</h2>
+			<CodeCard code={general} scope={{ Input }} language='jsx' />
+			<h2>Password</h2>
 			<Spacer h={1} />
-			A button with secondary importance.
+			A password input field.
 			<Spacer h={1} />
-			<CodeCard code={secondary} scope={{ Button }} language='jsx' />
-			<h2>Link</h2>
+			Debugging: {debugPassword}
+			<Input
+				type='password'
+				placeholder='Password input...'
+				onChange={handleChange}
+			/>
 			<Spacer h={1} />
-			A button can be a link.
-			<Spacer h={1} />
-			<CodeCard code={link} scope={{ Button }} language='jsx' />
-			<h2>Small</h2>
-			<Spacer h={1} />
-			A button can be small.
-			<Spacer h={1} />
-			<CodeCard code={small} scope={{ Button }} language='jsx' />
-			<h2>Large</h2>
-			<Spacer h={1} />
-			A button can be large.
-			<Spacer h={1} />
-			<CodeCard code={large} scope={{ Button }} language='jsx' />
-			<h2>Deactivated</h2>
-			<Spacer h={1} />
-			A button can be deactivated.
-			<Spacer h={1} />
-			<CodeCard code={deactivated} scope={{ Button }} language='jsx' />
-			<h2>Warning</h2>
-			<Spacer h={1} />
-			A button can be a warning.
-			<Spacer h={1} />
-			<CodeCard code={warning} scope={{ Button }} language='jsx' />
+			<CodeCard code={password} scope={{ Input }} language='jsx' />
 			<h2>APIs</h2>
 			<Spacer h={1} />
 			<Card>
@@ -195,4 +181,4 @@ const ButtonPage = () => {
 	);
 };
 
-export default ButtonPage;
+export default InputPage;

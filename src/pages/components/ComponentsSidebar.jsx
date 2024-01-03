@@ -8,7 +8,11 @@ const ComponentsSidebar = () => {
 				<SidebarLink label='Logo' hover />
 			</Page.SidebarSectionCollapse>
 			<Page.SidebarSectionCollapse label='Data Entry'>
-				<SidebarLink label='Input' hover />
+				<SidebarLink
+					label='Input'
+					hover
+					to='components/data_entry/input'
+				/>
 			</Page.SidebarSectionCollapse>
 
 			<Page.SidebarSection label='Feedback'></Page.SidebarSection>

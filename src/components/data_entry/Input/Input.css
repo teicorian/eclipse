@@ -66,3 +66,11 @@
 .icon path {
 	fill: var(--trim);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+	-webkit-text-fill-color: var(--color) !important;
+}
