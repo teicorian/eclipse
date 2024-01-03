@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { LiveProvider, LivePreview } from 'react-live';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
+import 'prismjs/components/prism-jsx';
+import '../code-theme.css';
 import { Card, Spacer } from 'components';
 
 const CodeCard = ({ code, scope, language }) => {

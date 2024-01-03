@@ -4,9 +4,14 @@ import ComponentsHome from './ComponentsHome';
 import HeaderPage from './layout/Header';
 import UserPage from './identity/User';
 import ButtonPage from './general/Button';
+import InputPage from './data_entry/Input';
 
 function Components() {
 	const componentMappings = {
+		// ////////////////////////////////////////////////////////// //
+		// ///// General //////////////////////////////////////////// //
+		input: InputPage,
+
 		// ////////////////////////////////////////////////////////// //
 		// ///// General //////////////////////////////////////////// //
 		button: ButtonPage,
