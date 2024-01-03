@@ -32,11 +32,8 @@ jobs:
             - name: Install dependencies
               run: yarn install
 
-            - name: Authenticate with npm
-              run: echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
-
             - name: Build package
-              run: yarn build-package
+              run: NODE_AUTH_TOKEN=$NODE_AUTH_TOKEN yarn build-package
 
             - name: Publish to npm nightly
               run: |
