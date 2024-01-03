@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.3.21",
+	"version": "1.3.22",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -26,7 +26,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/teicorian/eclipse"
+		"url": "https://github.com/teicorian/eclipse.git"
 	},
 	"homepage": "https://eclipse-ui.com",
 	"keywords": [

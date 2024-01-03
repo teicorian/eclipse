@@ -2,7 +2,7 @@ name: Publish to npm nightly
 
 on:
     schedule:
-        - cron: '0 0 * * *' # Run every night at midnight
+        - cron: '0 0 * * *'
     push:
         branches:
             - nightly
@@ -31,6 +31,9 @@ jobs:
 
             - name: Install dependencies
               run: yarn install
+
+            - name: Authenticate with npm
+              run: echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
 
             - name: Build package
               run: yarn build-package
