@@ -10,15 +10,15 @@ const Page = ({ fullscreen, fixed, centered, max, children, ...props }) => {
 		maxWidth.push(`maxWidth--${max}`);
 	}
 
-	const layout = [];
+	const layout = {};
 	if (fullscreen) {
-		layout.push('fullscreen');
+		layout.type = 'fullscreen';
 	}
 	if (fixed) {
-		layout.push('fixed');
+		layout.type = 'fixed';
 	}
 	if (centered) {
-		layout.push('centered');
+		layout.type = 'centered';
 	}
 
 	const [padding, setPadding] = useState(0);
@@ -54,7 +54,7 @@ const Page = ({ fullscreen, fixed, centered, max, children, ...props }) => {
 			}}
 			{...props}
 		>
-			<div className={`page-container ${layout ? layout : ''}`}>
+			<div className={`page-container ${layout.type ? layout.type : ''}`}>
 				<div className={`page-wrapper ${max ? maxWidth : ''}`}>
 					{children}
 				</div>
