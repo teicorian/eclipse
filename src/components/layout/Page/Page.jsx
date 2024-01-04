@@ -5,10 +5,7 @@ import { Chevron, Bars, Close } from '../../icons';
 import './Page.css';
 
 const Page = ({ fullscreen, fixed, centered, max, children, ...props }) => {
-	const maxWidth = [];
-	if (max) {
-		maxWidth.push(`maxWidth--${max}`);
-	}
+	const maxWidth = max ? `maxWidth--${max}` : '';
 
 	const layout = {};
 	if (fullscreen) {
