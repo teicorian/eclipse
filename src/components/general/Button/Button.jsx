@@ -6,7 +6,6 @@ import './Button.css';
  * Primary UI component for user interaction
  */
 const Button = ({
-	key,
 	primary,
 	warning,
 	deactivated,
@@ -26,7 +25,6 @@ const Button = ({
 	if (to) {
 		to = `/${to}`;
 	}
-	if (!key) key = label;
 	const mode = primary
 		? 'eclipse-button--primary'
 		: warning

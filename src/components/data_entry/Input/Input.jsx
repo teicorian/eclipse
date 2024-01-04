@@ -6,7 +6,6 @@ import { Eye, EyeSlash } from '../../icons';
 import './Input.css';
 
 const Input = ({
-	key,
 	id,
 	name,
 	type,
@@ -24,8 +23,6 @@ const Input = ({
 	const handleButtonClick = () => {
 		setIsPasswordVisible(!isPasswordVisible);
 	};
-
-	if (!key) key = label;
 
 	return (
 		<div className={`input ${isFocused ? 'focused' : ''}`} {...props}>
