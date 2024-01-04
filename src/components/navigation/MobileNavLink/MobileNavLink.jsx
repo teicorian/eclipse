@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MobileNavLink.css';
 
-const MobileNavLink = ({ to, label, children, ...props }) => {
+const MobileNavLink = ({ key, to, label, children, ...props }) => {
 	if (!to) {
 		to = '/';
 	}
@@ -13,6 +13,8 @@ const MobileNavLink = ({ to, label, children, ...props }) => {
 	if (to.charAt(0) !== '/') {
 		to = `/${to}`;
 	}
+
+	if (!key) key = label;
 
 	return (
 		<Link to={to} className={'mobile-navlink'}>
