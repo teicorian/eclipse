@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    # React App
+    react:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: eclipse
+        ports:
+            - '6006:6006'
+        volumes:
+            - .:/eclipse
+
+volumes:
+    eclipse:
