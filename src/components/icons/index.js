@@ -7,3 +7,6 @@ export { default as OpenLink } from './OpenLink';
 export { default as Chevron } from './Chevron';
 export { default as Copy } from './Copy';
 export { default as Check } from './Check';
+export { default as Error } from './Error';
+export { default as Warning } from './Warning';
+export { default as Done } from './Done';
