@@ -16,6 +16,10 @@ const InputPage = () => {
 	const general = "<Input placeholder='General input...' />";
 	const password =
 		"<Input type='password' placeholder='Password input...' />";
+	const left =
+		"<Input left={'teicor.com/'} placeholder='Left modified input...' />";
+	const right =
+		"<Input right={'done'} placeholder='Right modified input...' />";
 
 	return (
 		<ComponentsLayout>
@@ -30,14 +34,17 @@ const InputPage = () => {
 			<Spacer h={1} />
 			A password input field.
 			<Spacer h={1} />
-			Debugging: {debugPassword}
-			<Input
-				type='password'
-				placeholder='Password input...'
-				onChange={handleChange}
-			/>
-			<Spacer h={1} />
 			<CodeCard code={password} scope={{ Input }} language='jsx' />
+			<h2>Left modified</h2>
+			<Spacer h={1} />
+			An input field with assets on the left side.
+			<Spacer h={1} />
+			<CodeCard code={left} scope={{ Input }} language='jsx' />
+			<h2>Right modified</h2>
+			<Spacer h={1} />
+			An input field with assets on the right side.
+			<Spacer h={1} />
+			<CodeCard code={right} scope={{ Input }} language='jsx' />
 			<h2>APIs</h2>
 			<Spacer h={1} />
 			<Card>

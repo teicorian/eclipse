@@ -1,33 +1,27 @@
 @import '../../styles/base.css';
 
-.sb-story {
-	padding: 3rem;
-	width: 300px;
-}
-
 .input {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: stretch;
 	justify-content: space-between;
 	width: 100%;
 	padding-bottom: 1px;
-	background-color: #fff;
+	background-color: var(--background);
 	border: 1px solid var(--trim--input);
 	border-radius: var(--border-radius);
-	cursor: text;
 }
 
 .input ::selection {
-	background-color: #a569f9;
-	color: #fff;
+	background-color: var(--color-amethyst);
+	color: var(--background);
 }
 
 .input.focused {
 	outline: none;
 	padding-bottom: 0;
-	background-color: #fafafa;
-	border-bottom: 2px solid #a569f9;
+	background-color: var(--input-background--activated);
+	border-bottom: 2px solid var(--color-amethyst);
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
 	border-bottom-left-radius: 0;
@@ -41,7 +35,7 @@
 	width: 100%;
 	line-height: 1.5rem;
 	border: 0;
-	background-color: #fff;
+	background-color: var(--background);
 }
 
 .input input:focus {
@@ -50,7 +44,7 @@
 	width: 100%;
 	line-height: 1.5rem;
 	border: 0;
-	background-color: #fafafa;
+	background-color: var(--input-background--activated);
 }
 
 .icon {
@@ -73,4 +67,42 @@ input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
 	-webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
 	-webkit-text-fill-color: var(--color) !important;
+}
+
+.input-left {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
+	padding: 0 1rem 0 1rem;
+	color: var(--color--deactivated-secondary);
+	background-color: var(--background--deactivated);
+	border-right: 1px solid var(--trim);
+	letter-spacing: 0.035rem;
+	margin-bottom: -1px;
+}
+
+.input-left.focused {
+	padding-top: 1px;
+	margin: 0;
+}
+
+.input-right {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
+	padding: 0 0.5rem 0 0.5rem;
+	color: var(--color--deactivated-secondary);
+	background-color: var(--background--deactivated);
+	border-left: 1px solid var(--trim);
+	letter-spacing: 0.035rem;
+	margin-bottom: -1px;
+}
+
+.input-right.focused {
+	padding-top: 1px;
+	margin: 0;
 }

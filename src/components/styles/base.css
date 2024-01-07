@@ -37,6 +37,7 @@ Global :root variables, for those independent of themes
 	--border-radius: 0.25rem;
 
 	--color--deactivated: #707070;
+	--color--deactivated-secondary: #7d7d7d;
 	--background--deactivated: #f9f9f9;
 	--button--deactivated: #f0f0f0;
 
@@ -48,6 +49,8 @@ Global :root variables, for those independent of themes
 
 	--transition: var(--transition);
 	--transition-slow: all 0.5s ease-in-out;
+
+	--input-background--activated: #fafafa;
 }
 
 .hidden {

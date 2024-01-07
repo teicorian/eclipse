@@ -1,8 +1,7 @@
 // NavLink.js
 
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Eye, EyeSlash } from '../../icons';
+import { Eye, EyeSlash, Error, Warning, Done } from '../../icons';
 import './Input.css';
 
 const Input = ({
@@ -15,6 +14,8 @@ const Input = ({
 	value,
 	required,
 	minLength,
+	left,
+	right,
 	...props
 }) => {
 	const [isFocused, setIsFocused] = useState(false);
@@ -24,9 +25,22 @@ const Input = ({
 		setIsPasswordVisible(!isPasswordVisible);
 	};
 
+	const iconComponents = {
+		error: Error,
+		warning: Warning,
+		done: Done,
+	};
+
+	const Icon = iconComponents[right];
+
 	return (
 		<div className={`input ${isFocused ? 'focused' : ''}`} {...props}>
 			{label && <label htmlFor={id}>{label}</label>}
+			{left && (
+				<div className={`input-left ${isFocused ? 'focused' : ''}`}>
+					{left}
+				</div>
+			)}
 			<input
 				id={id}
 				name={name}
@@ -44,19 +58,13 @@ const Input = ({
 					{isPasswordVisible ? <EyeSlash /> : <Eye />}
 				</div>
 			)}
+			{right && (
+				<div className={`input-right ${isFocused ? 'focused' : ''}`}>
+					{right && <Icon />}
+				</div>
+			)}
 		</div>
 	);
 };
 
 export default Input;
-
-Input.propTypes = {
-	id: PropTypes.string,
-	name: PropTypes.string,
-	type: PropTypes.string,
-	label: PropTypes.string,
-	placeholder: PropTypes.string,
-	autoComplete: PropTypes.string,
-	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-	required: PropTypes.bool,
-};
