@@ -5,7 +5,7 @@ const Done = ({ size, color }) => {
 		size = 18;
 	}
 	if (!color) {
-		color = '#1C984C';
+		color = '#2BBA3F';
 	}
 	return (
 		<svg

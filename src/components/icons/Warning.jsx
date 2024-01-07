@@ -5,7 +5,7 @@ const Warning = ({ size, color }) => {
 		size = 18;
 	}
 	if (!color) {
-		color = '#F17E2B';
+		color = '#FFB33B';
 	}
 	return (
 		<svg

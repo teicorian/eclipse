@@ -5,7 +5,7 @@ const Error = ({ size, color }) => {
 		size = 18;
 	}
 	if (!color) {
-		color = '#E51A29';
+		color = '#FE5450';
 	}
 	return (
 		<svg
