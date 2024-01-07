@@ -1,140 +1,202 @@
 import React, { useState } from 'react';
-import Editor from 'react-simple-code-editor';
-import { LiveProvider, LivePreview } from 'react-live';
-import { highlight, languages } from 'prismjs/components/prism-core';
-import 'prismjs/components/prism-clike';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/themes/prism.css';
-import '../../code-theme.css';
+import '../../table.css';
 import ComponentsLayout from '../ComponentsLayout';
-import { User, Card, Spacer } from '../../../components';
+import { Card, Spacer, User } from '../../../components';
+import CodeCard from '../../helpers/card.code';
 
 const UserPage = () => {
 	const user = {
 		firstName: 'TJ',
 		lastName: 'Bredemeyer',
 		email: 'tj@teicor.com',
+		src: 'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_f923ff1979c04d839c450d1bf7adfe30',
 	};
 
-	const Snippet = {};
-	Snippet.import = "import { User } from '@teicor/eclipse';";
+	const primary = `<User firstName='${user.firstName}' lastName='${user.lastName}' />`;
 
-	const [generalCode, setGeneralCode] = useState(
-		`<User firstName='${user.firstName}' lastName='${user.lastName}' />`
-	);
+	const withEmail = `<User firstName='${user.firstName}' lastName='${user.lastName}' email='tj@teicor.com' />`;
 
-	const [withEmailCode, setWithEmailCode] = useState(
-		`<User firstName='${user.firstName}' lastName='${user.lastName}' email='tj@teicor.com' />`
-	);
+	const pfpRight = `<User firstName='${user.firstName}' lastName='${user.lastName}' right />`;
 
-	const [pfpRightCode, setPFPRightCode] = useState(
-		`<User firstName='${user.firstName}' lastName='${user.lastName}' right />`
-	);
+	const withImage = `<User firstName='${user.firstName}' lastName='${user.lastName}' src={'${user.src}'} />`;
+
+	const large = `<User firstName='${user.firstName}' lastName='${user.lastName}' src={'${user.src}'} size={4} />`;
+
+	const small = `<User firstName='${user.firstName}' lastName='${user.lastName}' src={'${user.src}'} size={1.5} />`;
 
 	return (
 		<ComponentsLayout>
-			<p>A user card displays a user profile picture, name, and email.</p>
+			<p>A button can be a form submission or a link to a new page.</p>
 			<Spacer h={2} />
-			{/* /////////////////////////////////////////////////////////// */}
-			{/* ///// General ///////////////////////////////////////////// */}
-			{/* /////////////////////////////////////////////////////////// */}
-			<h2>General</h2>
+			<h2>Primary</h2>
 			<Spacer h={1} />
-			Show user profile picture and name by default.
+			A standard User with no image.
 			<Spacer h={1} />
-			<Card type='deactivated'>
-				<Card.Body>
-					<LiveProvider
-						code={generalCode}
-						language='jsx'
-						scope={{ User }}
-					>
-						<LivePreview />
-					</LiveProvider>
-				</Card.Body>
-				<Card.CodeEditor copy={generalCode}>
-					<Editor
-						value={generalCode}
-						onValueChange={(generalCode) =>
-							setGeneralCode(generalCode)
-						}
-						highlight={(generalCode) =>
-							highlight(generalCode, languages.js)
-						}
-						language='jsx'
-					/>
-				</Card.CodeEditor>
-			</Card>
-			<Spacer h={2} />
-			{/* /////////////////////////////////////////////////////////// */}
-			{/* ///// With Email/////////////////////////////////////////// */}
-			{/* /////////////////////////////////////////////////////////// */}
+			<CodeCard code={primary} scope={{ User }} language='jsx' />
 			<h2>With Email</h2>
 			<Spacer h={1} />
-			Show user profile picture and name by default.
+			A User with email.
 			<Spacer h={1} />
-			<Card type='deactivated'>
+			<CodeCard code={withEmail} scope={{ User }} language='jsx' />
+			<h2>User Aligned Right</h2>
+			<Spacer h={1} />
+			A User with PFP aligned right.
+			<Spacer h={1} />
+			<CodeCard code={pfpRight} scope={{ User }} language='jsx' />
+			<h2>With Image</h2>
+			<Spacer h={1} />
+			A User with an image.
+			<Spacer h={1} />
+			<CodeCard code={withImage} scope={{ User }} language='jsx' />
+			<h2>Large User</h2>
+			<Spacer h={1} />
+			A User with size large.
+			<Spacer h={1} />
+			<CodeCard code={large} scope={{ User }} language='jsx' />
+			<h2>Small User</h2>
+			<Spacer h={1} />
+			A User with size small.
+			<Spacer h={1} />
+			<CodeCard code={small} scope={{ User }} language='jsx' />
+			<h2>APIs</h2>
+			<Spacer h={1} />
+			<Card>
 				<Card.Body>
-					<LiveProvider
-						code={withEmailCode}
-						language='jsx'
-						scope={{ User }}
-					>
-						<LivePreview />
-					</LiveProvider>
+					<h3 className={'api-h3'}>`Button`</h3>
+					<div className='table-container'>
+						<table>
+							<thead className={'table-header'}>
+								<tr>
+									<th>Attribute</th>
+									<th>Description</th>
+									<th>Type</th>
+									<th className='col-wrap'>
+										Accepted Values
+									</th>
+									<th>Default</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										label
+										<span className='required'>
+											&nbsp;(required)
+										</span>
+									</td>
+									<td>button text</td>
+									<td className={'styled'}>`string`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>primary</td>
+									<td>primary mode</td>
+									<td className={'styled'}>`boolean`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>deactivated</td>
+									<td>deactivated mode</td>
+									<td className={'styled'}>`boolean`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>warning</td>
+									<td>warning mode</td>
+									<td className={'styled'}>`boolean`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>size</td>
+									<td>define size</td>
+									<td className={'styled'}>`string`</td>
+									<td className={'col-wrap styled'}>
+										<span
+											style={{
+												color: '#fda069',
+												background: '#f9f9f9',
+												padding: '7px',
+												borderRadius: '4px',
+											}}
+										>
+											ButtonSizes
+										</span>
+									</td>
+									<td className={'styled'}>'medium'</td>
+								</tr>
+								<tr>
+									<td>onClick</td>
+									<td>define click action</td>
+									<td className={'styled'}>`ReactNode`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>to</td>
+									<td>define link path</td>
+									<td className={'styled'}>`string`</td>
+									<td className={'col-wrap'}>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>type</td>
+									<td>define button type</td>
+									<td className={'styled'}>`string`</td>
+									<td className={'col-wrap'}>
+										<span
+											style={{
+												color: '#fda069',
+												background: '#f9f9f9',
+												padding: '7px',
+												borderRadius: '4px',
+											}}
+										>
+											ButtonTypes
+										</span>
+									</td>
+									<td className={'styled'}>'submit'</td>
+								</tr>
+								<tr>
+									<td>...</td>
+									<td>native props</td>
+									<td className={'styled'}>
+										`ButtonHTMLAttributes`
+									</td>
+									<td className={'col-wrap styled'}>
+										'id', 'className', ...
+									</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h3 className={'api-h3'}>`Button.Size`</h3>
+					<div className={'table-types'}>
+						<span style={{ color: '#a569f9' }}>size </span>
+						<span style={{ color: '#fda069' }}>ButtonSizes </span>=
+						<ul>
+							<li>| small</li>
+							<li>| medium</li>
+							<li>| large</li>
+						</ul>
+					</div>
+					<h3 className={'api-h3'}>`Button.Type`</h3>
+					<div className={'table-types'}>
+						<span style={{ color: '#a569f9' }}>type </span>
+						<span style={{ color: '#fda069' }}>ButtonTypes </span>=
+						<ul>
+							<li>| button</li>
+							<li>| submit</li>
+							<li>| reset</li>
+						</ul>
+					</div>
 				</Card.Body>
-				<Card.CodeEditor copy={withEmailCode}>
-					<Editor
-						value={withEmailCode}
-						onValueChange={(withEmailCode) =>
-							setWithEmailCode(withEmailCode)
-						}
-						highlight={(withEmailCode) =>
-							highlight(withEmailCode, languages.js)
-						}
-						language='jsx'
-						padding={10}
-					/>
-				</Card.CodeEditor>
 			</Card>
-			<Spacer h={2} />
-			{/* /////////////////////////////////////////////////////////// */}
-			{/* ///// General ///////////////////////////////////////////// */}
-			{/* /////////////////////////////////////////////////////////// */}
-			<h2>PFP on the Right</h2>
-			<Spacer h={1} />
-			A User Card can display the profile picture on the left or the
-			right.
-			<Spacer h={1} />
-			<Card type='deactivated'>
-				<Card.Body>
-					<LiveProvider
-						code={pfpRightCode}
-						language='jsx'
-						scope={{ User }}
-					>
-						<LivePreview />
-					</LiveProvider>
-				</Card.Body>
-				<Card.CodeEditor copy={pfpRightCode}>
-					<Editor
-						value={pfpRightCode}
-						onValueChange={(pfpRightCode) =>
-							setPFPRightCode(pfpRightCode)
-						}
-						highlight={(pfpRightCode) =>
-							highlight(pfpRightCode, languages.js)
-						}
-						language='jsx'
-						padding={10}
-						style={{
-							fontFamily: '"Fira code", "Fira Mono", monospace',
-							fontSize: 12,
-						}}
-					/>
-				</Card.CodeEditor>
-			</Card>
-			<Spacer h={2} />
+			<Spacer h={6} />
 		</ComponentsLayout>
 	);
 };

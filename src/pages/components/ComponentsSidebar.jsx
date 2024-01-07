@@ -25,7 +25,7 @@ const ComponentsSidebar = () => {
 				/>
 			</Page.SidebarSectionCollapse>
 			<Page.SidebarSectionCollapse label='Identity'>
-				<SidebarLink label='PFP' hover />
+				<SidebarLink label='PFP' hover to='components/identity/pfp' />
 				<SidebarLink label='User' hover to='components/identity/user' />
 			</Page.SidebarSectionCollapse>
 			<Page.SidebarSectionCollapse label='Layout'>

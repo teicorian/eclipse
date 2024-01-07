@@ -10,7 +10,13 @@ Note: This file uses some CSS variables and thus cannot be wholly updated via co
 *::before,
 *::after {
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
+/* svg {
+	shape-rendering: geometricPrecision;
+} */
 
 ::selection {
 	background-color: var(--color-amethyst);
