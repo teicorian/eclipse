@@ -12,7 +12,12 @@ const PFP = ({ firstName, lastName, src, size, onClick, ...props }) => {
 	}
 
 	if (src) {
-		icon.asset = <img src={src} />;
+		icon.asset = (
+			<img
+				src={src}
+				style={{ width: `${size}rem`, height: `${size}rem` }}
+			/>
+		);
 	}
 
 	return (

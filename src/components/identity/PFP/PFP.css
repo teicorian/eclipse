@@ -1,8 +1,10 @@
+@import '../../styles/base.css';
+
 .pfp {
 	background-color: #a569f9;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
 	box-sizing: border-box;
 	border: 1px solid var(--trim);
 	color: #fff;
@@ -17,10 +19,9 @@
 }
 
 .pfp img {
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border: 1px solid var(--trim);
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
