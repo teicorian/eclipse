@@ -10,3 +10,4 @@ export { default as Check } from './Check';
 export { default as Error } from './Error';
 export { default as Warning } from './Warning';
 export { default as Done } from './Done';
+export { default as Trash } from './Trash';
