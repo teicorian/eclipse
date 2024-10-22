@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './SidebarLink.css';
 
-const NavLink = ({ to, label, hover, ...props }) => {
+const SidebarLink = ({ to, label, hover, ...props }) => {
 	if (!to) {
 		to = '/';
 	}
@@ -20,4 +20,4 @@ const NavLink = ({ to, label, hover, ...props }) => {
 	);
 };
 
-export default NavLink;
+export default SidebarLink;
