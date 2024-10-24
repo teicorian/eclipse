@@ -16,6 +16,7 @@ const Input = ({
 	minLength,
 	left,
 	right,
+	onChange,
 	...props
 }) => {
 	const [isFocused, setIsFocused] = useState(false);
@@ -50,6 +51,7 @@ const Input = ({
 				value={value}
 				required={required ? true : undefined}
 				minLength={minLength}
+				onChange={onChange}
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 			/>
