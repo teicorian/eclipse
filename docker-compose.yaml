@@ -11,6 +11,8 @@ services:
             - '3001:3001'
         volumes:
             - .:/eclipse
+        environment:
+            - PORT=3001
 
 volumes:
     eclipse:
