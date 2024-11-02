@@ -1,6 +1,6 @@
 {
 	"name": "@teicor/eclipse",
-	"version": "1.7.12",
+	"version": "1.7.13",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
 	"author": "TJ Bredemeyer <tj@teicor.com>",
@@ -12,7 +12,7 @@
 	],
 	"scripts": {
 		"nightly": "git add -A && yarn version --patch && git push origin nightly",
-		"upload": "yarn patch && yarn build-package && npm publish",
+		"upload": "yarn patch && git add -A && git commit -m '.' && git push && yarn build-package && npm publish ",
 		"patch": "yarn version --patch",
 		"build-package": "npm run clean && npm run babel",
 		"babel": "babel src/components --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
