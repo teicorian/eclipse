@@ -7,11 +7,14 @@ import CodeCard from '../../helpers/card.code';
 const PFPPage = () => {
 	const primary = "<PFP firstName={'TJ'} lastName={'Bredemeyer'} />";
 	const withImage =
-		"<PFP firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_f923ff1979c04d839c450d1bf7adfe30'} />";
+		"<PFP firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_71607bd32d684287991340a3c7f9d386'} />";
 	const large =
-		"<PFP size={4} firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_f923ff1979c04d839c450d1bf7adfe30'} />";
+		"<PFP size={4} firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_71607bd32d684287991340a3c7f9d386'} />";
 	const small =
-		"<PFP size={1.5} firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_f923ff1979c04d839c450d1bf7adfe30'} />";
+		"<PFP size={1.5} firstName={'TJ'} lastName={'Bredemeyer'} src={'https://assets-dev.teicor.com/users/0646193b6f9f4e5b9420e07532532935/pfp_71607bd32d684287991340a3c7f9d386'} />";
+
+	const team =
+		"<PFP name={'Teicor'} />";
 
 	return (
 		<ComponentsLayout>
@@ -37,6 +40,11 @@ const PFPPage = () => {
 			A PFP with size small.
 			<Spacer h={1} />
 			<CodeCard code={small} scope={{ PFP }} language='jsx' />
+			<h2>Team PFP</h2>
+			<Spacer h={1} />
+			A Team PFP.
+			<Spacer h={1} />
+			<CodeCard code={team} scope={{ PFP }} language='jsx' />
 			<h2>APIs</h2>
 			<Spacer h={1} />
 			<Card>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './PFP.css';
 
-const PFP = ({ firstName, lastName, src, size, onClick, ...props }) => {
+const PFP = ({ firstName, lastName, name, src, size, onClick, ...props }) => {
 	if (!size) {
 		size = 2;
 	}
@@ -9,6 +9,10 @@ const PFP = ({ firstName, lastName, src, size, onClick, ...props }) => {
 	const icon = {};
 	if (firstName && lastName) {
 		icon.asset = `${firstName[0]}${lastName[0]}`;
+	}
+
+	if (name) {
+		icon.asset = name[0];
 	}
 
 	if (src) {
