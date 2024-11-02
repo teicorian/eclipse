@@ -12,7 +12,7 @@
 	],
 	"scripts": {
 		"nightly": "git add -A && yarn version --patch && git push origin nightly",
-		"upload": "yarn patch && git add -A && git commit -m '.' && git push && yarn build-package && npm publish ",
+		"upload": "yarn patch && git add -A && git diff-index --quiet HEAD || git commit -m '.' && git pushyarn  && yarn build-package && npm publish ",
 		"patch": "yarn version --patch",
 		"build-package": "npm run clean && npm run babel",
 		"babel": "babel src/components --out-dir components --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
