@@ -24,6 +24,8 @@ const UserPage = () => {
 
 	const small = `<User firstName='${user.firstName}' lastName='${user.lastName}' src={'${user.src}'} size={1.5} />`;
 
+	const team = `<User name='Teicor' />`;
+
 	return (
 		<ComponentsLayout>
 			<p>A button can be a form submission or a link to a new page.</p>
@@ -58,6 +60,11 @@ const UserPage = () => {
 			A User with size small.
 			<Spacer h={1} />
 			<CodeCard code={small} scope={{ User }} language='jsx' />
+			<h2>Team Card</h2>
+			<Spacer h={1} />
+			A team card.
+			<Spacer h={1} />
+			<CodeCard code={team} scope={{ User }} language='jsx' />
 			<h2>APIs</h2>
 			<Spacer h={1} />
 			<Card>

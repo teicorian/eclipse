@@ -9,6 +9,7 @@ const User = ({
 	size,
 	firstName,
 	lastName,
+	name,
 	src,
 	email,
 	onClick,
@@ -32,7 +33,7 @@ const User = ({
 	if (!size) {
 		size = 2;
 	}
-	const name = `${firstName} ${lastName}`;
+	const identity = name ? `${name}` : `${firstName} ${lastName}`;
 	return (
 		<Link className={'user-card'} {...props} onClick={onClick} to={to}>
 			<div
@@ -40,10 +41,11 @@ const User = ({
 				style={{ order: order.pfp, justifyContent: justify.pfp }}
 			>
 				<PFP
-					firstName={firstName}
-					lastName={lastName}
-					src={src}
-					size={size}
+				firstName={!name ? firstName : null}
+				lastName={!name ? lastName : null}
+				name={name ? name : null}
+				src={src}
+				size={size}
 				/>
 			</div>
 			<div
@@ -58,7 +60,7 @@ const User = ({
 						lineHeight: `${size * 0.5}rem`,
 					}}
 				>
-					{name}
+					{identity}
 				</div>
 				{email ? (
 					<div
