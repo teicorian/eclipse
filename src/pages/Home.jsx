@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import Page from '../components/layout/Page/Page';
 import Spacer from '../components/layout/Spacer/Spacer';
+import Button from '../components/general/Button/Button';
 
 import Card from '../components/surfaces/Card/Card';
 
@@ -21,7 +22,10 @@ const Home = () => {
 					<Spacer h={2} />
 					<Card type='deactivated'>
 						<Card.Header>Home Card</Card.Header>
-						<Card.Body>This is a card body</Card.Body>
+						<Card.Body row>
+							<p>This is a card body</p>
+							<p><Button label='Save' /></p>
+						</Card.Body>
 						<Card.Footer>This is a card footer</Card.Footer>
 					</Card>
 					<Spacer h={2} />
