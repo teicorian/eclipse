@@ -1,0 +1,76 @@
+.select-container {
+	position: relative;
+	cursor: pointer;
+	border: 1px solid var(--trim);
+	border-radius: var(--border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.select-container:hover {
+	background-color: #fbf9ff;
+}
+
+.select-container.focused {
+	background-color: #fbf9ff;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border-bottom: 2px solid var(--color-amethyst);
+	padding-bottom: 0px;
+}
+
+.select-display {
+	color: var(--color);
+	padding: var(--gutter);
+}
+
+.select-placeholder {
+	color: #aaa;
+}
+
+.custom-select-options {
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: none; /* Aligns with focused border */
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	z-index: 1000;
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: ellipsis;
+	max-width: 320px;
+	width: 100%;
+	box-sizing: border-box; /* Consistent width with container */
+	padding: 5px 0; /* Remove padding to avoid overflow */
+	margin: 0;
+}
+
+.custom-select-option {
+	padding: var(--gutter);
+	cursor: pointer;
+}
+
+.custom-select-option:hover {
+	background-color: #fbf9ff;
+}
+
+.toggle-icon {
+	padding: 0 var(--gutter) 0 0;
+}
+
+.toggle-icon path {
+	fill: #a3a3a3;
+}
+
+.select-display {
+	font-size: var(--base-font-size);
+	padding: 0 var(--gutter);
+}
+
+.input-left {
+	margin: 0;
+	padding: 0;
+	padding: 0 var(--gutter);
+}

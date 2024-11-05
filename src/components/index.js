@@ -9,6 +9,7 @@ export { default as Logo } from './brand/Logo/Logo';
 // ################################################################## //
 
 export { default as Input } from './data_entry/Input/Input';
+export { default as Select } from './data_entry/Select/Select';
 
 // ################################################################## //
 // ################### Feedback Components ########################## //

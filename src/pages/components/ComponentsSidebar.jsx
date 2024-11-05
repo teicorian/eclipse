@@ -13,6 +13,11 @@ const ComponentsSidebar = () => {
 					hover
 					to='components/data_entry/input'
 				/>
+				<SidebarLink
+					label='Select'
+					hover
+					to='components/data_entry/select'
+				/>
 			</Page.SidebarSectionCollapse>
 
 			<Page.SidebarSection label='Feedback'></Page.SidebarSection>
